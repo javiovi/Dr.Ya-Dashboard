@@ -1,0 +1,3522 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<meta property="og:title" content="Dashboard - Dr.Ya" />
+<meta property="og:description" content="" />
+<meta property="og:url" content="" />
+<meta property="og:image" content="" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Dashboard - Dr.Ya" />
+<meta property="og:locale" content="es_ES" />
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/dr-ya-icon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/dr-ya-icon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="./assets/icons/dr-ya-icon.svg">
+<link rel="icon" href="./assets/icons/dr-ya-icon.svg">
+<link href="./assets/interna.css" rel="stylesheet">
+
+
+
+<title>Dashboard - Inicio</title>
+</head>
+<body>
+
+  <div class="dashboard">
+    <!-- Menú lateral -->
+ 
+<nav class="sidebar closed">
+
+  <div class="logo-mobile">
+    <img src="./assets/icons/h-mobile.svg" alt="Logo">
+  </div>
+  <!-- Icono de hamburguesa para abrir el menú -->
+  <div class="toggle-menu open-menu">
+    <span class="menu-icon">
+      <img src="./assets/icons/hamburguer.svg" alt="Abrir Menú">
+    </span>
+  </div>
+
+  <!-- Icono de cierre para cerrar el menú -->
+  <div class="toggle-menu close-menu">
+    <span class="menu-icon">
+      <img src="./assets/icons/close.svg" alt="Cerrar Menú">
+    </span>
+  </div>
+
+  <!-- Lista de menús -->
+  <ul class="menu-list">
+    <li class="menu-item" ><a href="#" id="inicio-link">Inicio</a></li>
+    <li class="menu-item" ><a href="#" id="agenda-link">Agenda</a></li>
+  <li class="menu-item" ><a href="#" id="turnos-link">Turnos</a></li>
+  <li class="menu-item" ><a href="#" id="profesionales-link">Profesionales</a></li>
+  <li class="menu-item"><a href="#" id="pacientes-link">Pacientes</a> </li>
+
+ <li class="submenu-item" ><a href="#" id="historia-link">Historia clínica</a></li>
+    
+  
+ 
+  <li class="menu-item" ><a href="#" id="reportes-link">Reportes</a></li>
+  </ul>
+</nav>
+
+
+
+     <!-- Contenido principal -->
+  <main class="main-content">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-dr">
+        <img src="./assets/icons/dr-ya-nav.svg" alt="Healthia Logo">
+      </div>
+      <div class="notification-icon">
+        <img src="./assets/icons/bell.svg" alt="Notificaciones">
+    
+      <button class="account-btn" id="accountBtn">Mi cuenta</button>
+
+      <!-- Contenedor del menú desplegable -->
+<div class="account-dropdown hidden" id="accountDropdown">
+  <div class="account-menu">
+    <div class="profile-icon">
+      <img src="./assets/icons/login.svg" alt="Avatar" class="avatar">
+    </div>
+    <p class="account-name">Nombre</p>
+    <ul class="account-options">
+      <li><a href="#"  data-target="profileSection" onclick="mostrarPerfil()">Mi perfil</a></li>
+      <li><a href="#"  data-target="configSection" onclick="mostrarConfiguracion()">Configuración</a></li>
+      <li><a href="#"  data-target="planSection">Plan</a></li>
+      <li><a href="#"  data-target="availabilitySection" onclick="mostrarDisponibilidad()">Disponibilidad</a></li>
+      <li><a href="#"  data-target="helpSection">Ayuda</a></li>
+      <li><a href="#" class="logout">Cerrar Sesión</a></li>
+    </ul>
+  </div>
+</div>
+      </div>
+    </header>
+
+<!-- Sección "Mi Perfil" -->
+<div class="profile-section hidden" id="profileSection">
+  <div class="profile-info">
+    <h2 class="profile-title">Información clínica/profesional</h2>
+    
+    <h2>Perfil</h2>
+    <div class="profile-container">
+      <div class="photo-wrapper">
+        <div class="photo-circle"></div>
+        <div class="photo-details">
+          <button class="btn-upload">Subir imagen</button>
+          <p class="photo-note">*JPG, GIF o PNG. Tamaño máximo de 5 MB.</p>
+        </div>
+      </div>
+      <div class="profile-status">
+        <h3 class="status-title">Estado del perfil</h3>
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress" style="width: 85%;"></div>
+          </div>
+          <span class="progress-percentage">85%</span>
+        </div>
+        <button class="btn-view-profile">Ver perfil</button>
+      </div>
+    </div>
+    
+    
+    <!-- Inputs debajo de la información del perfil -->
+    <div class="profile-details">
+      <div class="input-group-tres">
+        <label for="nombre">Nombre*</label>
+        <input type="text" id="nombre" class="form-input-tres" placeholder="Cenere">
+      </div>
+      
+      <div class="profile-input-row">
+        <div class="input-group-tres">
+          <label for="telefono">Teléfono*</label>
+          <input type="text" id="telefono" class="form-input-tres" placeholder="+54 000 0000 000">
+        </div>
+        <div class="input-group-tres">
+          <label for="mail">Mail*</label>
+          <input type="email" id="mail" class="form-input-tres" placeholder="mail@doctorya.com.ar">
+        </div>
+        <div class="input-group-tres">
+          <label for="direccion">Dirección*</label>
+          <input type="text" id="direccion" class="form-input-tres" placeholder="777 Calle, Ciudad, Provincia, País">
+        </div>
+      </div>
+    </div>
+  
+    <div class="textarea-container">
+      <div class="input-group-tres">
+        <label for="descripcion">Descripción*</label>
+        <textarea id="descripcion" class="form-textarea-tres" placeholder="Ingresa una descripción"></textarea>
+      </div>
+      
+      <div class="input-group-tres">
+        <label for="experiencia">Experiencia</label>
+        <textarea id="experiencia" class="form-textarea-tres" placeholder="Ingresa tu experiencia"></textarea>
+      </div>
+    </div>
+  
+    <div class="blog-section">
+      <h2 class="section-title-dos">Blog</h2>
+      
+      <div class="content-wrapper">
+        <div class="cards-container-dos">
+          <div class="card-profile">
+            <h3 class="card-title">Título nota</h3>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+          </div>
+          <div class="card-profile">
+            <h3 class="card-title">Título nota</h3>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+          </div>
+          <div class="card-profile">
+            <h3 class="card-title">Título nota</h3>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+          </div>
+          <div class="card-profile">
+            <h3 class="card-title">Título nota</h3>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+          </div>
+          <div class="card-profile">
+            <h3 class="card-title">Título nota</h3>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+          </div>
+        </div>
+        
+        <div class="buttons-container-dos">
+          <button class="btn-action modify-btn">Modificar notas</button>
+          <button class="btn-action add-btn-dos">Añadir nota</button>
+          <button class="btn-action delete-btn">Eliminar</button>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="button-container">
+      <button class="btn-update-profile">Actualizar perfil</button>
+    </div>
+  </div>
+
+ 
+</div>
+
+
+
+<!-- Sección "Configuracion" -->
+
+<section class="config-section hidden" id="configSection">
+  <h2 class="config-title">Configuración clínica/profesional</h2>
+  <div class="config-container">
+    <div class="config-group">
+      <div class="input-container-dos">
+        <label class="input-title">Habilitación</label>
+        <button class="btn-upload">Subir archivo</button>
+        <span class="file-note">Ingrese un archivo en formato<br>PDF únicamente.</span>
+      </div>
+      
+      <div class="input-container-dos">
+        <label class="input-title">Extensión AFIP</label>
+        <div class="button-wrapper">
+          <button class="btn-view-file">Ver archivo subido</button>
+          <button class="btn-upload">Subir archivo nuevo</button>
+        </div>
+        <span class="file-note-one">Puede subir un archivo PDF o ZIP con las<br>constancias de exenciones impositivas.</span>
+      </div>
+    </div>
+
+    <div class="config-inputs">
+      <div class="input-container-dos">
+        <label for="cuit">CUIT*</label>
+        <input type="text" id="cuit" class="form-input-conf" placeholder="00000000000">
+        <span class="input-note">Recuerde que son 11 caracteres sin<br>guiones ni espacios</span>
+      </div>
+
+      <div class="input-container-dos">
+        <label class="input-title">Constancia CUIT*</label>
+        <button class="btn-upload">Subir archivo</button>
+        <span class="file-note-two">Ingrese un archivo en formato<br> PDF únicamente.</span>
+      </div>
+
+      <div class="input-container-dos cbu-container">
+        <label for="cbu">CBU*</label>
+        <input type="text" id="cbu" class="form-input-conf-b" placeholder="+54 000 0000 000">
+        <span class="input-note">Recuerde que son 22 caracteres sin guiones ni espacios</span>
+      </div>
+
+      <div class="input-container-dos">
+        <label class="input-title">Constancia CBU*</label>
+        <button class="btn-upload">Subir archivo</button>
+        <span class="file-note-two">Ingrese un archivo en formato<br> PDF únicamente.</span>
+      </div>
+    </div>
+
+    <div class="plan-info">
+     <p class="plan-text"><span>Plan actual:</span> Hasta 25 Profesionales</p>
+      <button class="btn-view-plans">Ver planes</button>
+    </div>
+ 
+ 
+  </div>
+  <!-- TAGS-->
+
+  <div class="tag-container">
+    <div class="tag-content">
+      <h3 class="tag-header">Obras sociales*</h3>
+      <div class="tag-wrapper" id="socialesWrapper">
+        <div class="tag-item">
+          <span>Obra social</span>
+          <button class="remove-btn" onclick="removeTag(this)">
+            <img src="./assets/icons/quitar.svg" alt="Eliminar">
+          </button>
+        </div>
+        <button class="add-tag-btn" onclick="addTag('socialesWrapper', 'Obra social')">
+          <img src="./assets/icons/agregar.svg" alt="Añadir">
+        </button>
+      </div>
+    </div>
+  
+    <div class="practices-specialties">
+    <div class="tag-content">
+      <h3 class="tag-header">Prácticas*</h3>
+      <div class="tag-wrapper" id="practicasWrapper">
+        <div class="tag-item">
+          <span>Práctica</span>
+          <button class="remove-btn" onclick="removeTag(this)">
+            <img src="./assets/icons/quitar.svg" alt="Eliminar">
+          </button>
+        </div>
+        <button class="add-tag-btn" onclick="addTag('practicasWrapper', 'Práctica')">
+          <img src="./assets/icons/agregar.svg" alt="Añadir">
+        </button>
+      </div>
+    </div>
+  
+    <div class="tag-content">
+      <h3 class="tag-header">Especialidades*</h3>
+      <div class="tag-wrapper" id="especialidadesWrapper">
+        <div class="tag-item">
+          <span>Especialidad</span>
+          <button class="remove-btn" onclick="removeTag(this)">
+            <img src="./assets/icons/quitar.svg" alt="Eliminar">
+          </button>
+        </div>
+        <button class="add-tag-btn" onclick="addTag('especialidadesWrapper', 'Especialidad')">
+          <img src="./assets/icons/agregar.svg" alt="Añadir">
+        </button>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="holder-section">
+    <h2 class="holder-title">Datos del titular</h2>
+    <form class="holder-form">
+      <div class="holder-input-group">
+        <div class="holder-input-container">
+          <label class="holder-label" for="nombre">Nombre*</label>
+          <input class="holder-input" type="text" id="nombre" placeholder="Juan">
+        </div>
+        <div class="holder-input-container">
+          <label class="holder-label" for="apellido">Apellido*</label>
+          <input class="holder-input" type="text" id="apellido" placeholder="Perez">
+        </div>
+      </div>
+      
+      <div class="holder-input-group">
+        <div class="holder-input-container">
+          <label class="holder-label" for="telefono">Teléfono*</label>
+          <input class="holder-input" type="tel" id="telefono" placeholder="+54 000 0000 000">
+        </div>
+        <div class="holder-input-container">
+          <label class="holder-label" for="mail">Mail*</label>
+          <input class="holder-input" type="email" id="mail" placeholder="mail@doctorva.com.ar">
+        </div>
+      </div>
+  
+      <div class="holder-input-group">
+        <div class="holder-input-container">
+          <label class="holder-label" for="fecha-nacimiento">Fecha de nacimiento*</label>
+          <input class="holder-input" type="text" id="fecha-nacimiento" placeholder="DD/MM/AAAA">
+        </div>
+        <div class="holder-input-container">
+          <label class="holder-label" for="dni">DNI*</label>
+          <input class="holder-input" type="text" id="dni" placeholder="00.000.000">
+        </div>
+      </div>
+  
+      <div class="holder-button-container">
+        <button type="submit" class="holder-submit-button">Guardar cambios</button>
+      </div>
+    </form>
+  </div>
+  
+</section>
+
+<!-- Sección "Disponibilidad" -->
+
+<section id="availabilitySection" class="hidden availability-section">
+  <h2 class="availability-title">Horarios</h2>
+  
+  <div class="availability-filters">
+    <div class="filter-item">
+      <label for="profesional" class="filter-label-disponibilidad">Profesional</label>
+      <div class="custom-select">
+      <select id="profesional" class="filter-select-disponibilidad">
+        
+        <option>Todos los profesionales</option>
+      </select>
+      </div>
+    </div>
+
+    <div class="filter-item">
+      <label for="direccion" class="filter-label-disponibilidad">Dirección</label>
+      <div class="custom-select">
+      <select id="direccion" class="filter-select-disponibilidad">
+        <option>Todas las direcciones</option>
+      </select>
+      </div>
+    </div>
+
+    <div class="filter-item mobile-hide">
+      <label for="zona-horaria" class="filter-label-disponibilidad">Zona horaria</label>
+      <div class="custom-select">
+      <select id="zona-horaria" class="filter-select-disponibilidad">
+        <option>Buenos Aires, Argentina</option>
+      </select>
+    </div>
+    </div>
+  </div>
+
+  <div class="view-switch">
+    <button id="listViewBtn" class="view-tab selected-tab" onclick="changeView('list')">Vista de lista</button>
+    <button id="calendarViewBtn" class="view-tab" onclick="changeView('calendar')">Vista de calendario</button>
+  </div>
+
+  <div id="listViewContent" class="view-content calendar-list-section ">
+    <div class="left-block">
+      <h2 class="block-title">Horas semanales</h2>
+      
+      <div class="day-row">
+        <input type="checkbox" id="dom" name="dom" class="day-checkbox">
+        <label for="dom" class="day-label">DOM</label>
+        <div class="time-row">
+        <span class="not-available-text">No disponible</span>
+      
+      
+        <div class="extra-icons extra-mobile">
+          <button class="icon-button"><img src="./assets/icons/mas-item.svg" alt="Add"></button>
+          <button class="icon-button"><img src="./assets/icons/copiar-item.svg" alt="Copy"></button>
+        </div>
+        </div>
+      </div>
+    
+      <div class="day-row">
+        <input type="checkbox" id="lun" name="lun" class="day-checkbox" checked>
+        <label for="lun" class="day-label">LUN</label>
+        <div class="time-row">
+          <div class="time-inputs">
+            <input type="text" value="09:00" class="time-input">
+            <span class="dash">-</span>
+            <input type="text" value="17:00" class="time-input">
+            <button class="icon-button-remove"><img src="./assets/icons/remove.svg" alt="Remove"></button>
+          </div>
+          <div class="extra-icons">
+            <button class="icon-button"><img src="./assets/icons/mas-item.svg" alt="Add"></button>
+            <button class="icon-button"><img src="./assets/icons/copiar-item.svg" alt="Copy"></button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-row">
+        <input type="checkbox" id="mar" name="mar" class="day-checkbox" checked>
+        <label for="mar" class="day-label">MAR</label>
+        <div class="time-row">
+          <div class="time-inputs">
+            <input type="text" value="09:00" class="time-input">
+            <span class="dash">-</span>
+            <input type="text" value="17:00" class="time-input">
+            <button class="icon-button-remove"><img src="./assets/icons/remove.svg" alt="Remove"></button>
+          </div>
+          <div class="extra-icons">
+            <button class="icon-button"><img src="./assets/icons/mas-item.svg" alt="Add"></button>
+            <button class="icon-button"><img src="./assets/icons/copiar-item.svg" alt="Copy"></button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-row">
+        <input type="checkbox" id="lun" name="mie" class="day-checkbox" checked>
+        <label for="lun" class="day-label">MIE</label>
+        <div class="time-row">
+          <div class="time-inputs">
+            <input type="text" value="09:00" class="time-input">
+            <span class="dash">-</span>
+            <input type="text" value="17:00" class="time-input">
+            <button class="icon-button-remove"><img src="./assets/icons/remove.svg" alt="Remove"></button>
+          </div>
+          <div class="extra-icons">
+            <button class="icon-button"><img src="./assets/icons/mas-item.svg" alt="Add"></button>
+            <button class="icon-button"><img src="./assets/icons/copiar-item.svg" alt="Copy"></button>
+          </div>
+        </div>
+      </div>
+      <div class="day-row">
+        <input type="checkbox" id="lun" name="jue" class="day-checkbox" checked>
+        <label for="lun" class="day-label">JUE</label>
+        <div class="time-row">
+          <div class="time-inputs">
+            <input type="text" value="09:00" class="time-input">
+            <span class="dash">-</span>
+            <input type="text" value="17:00" class="time-input">
+            <button class="icon-button-remove"><img src="./assets/icons/remove.svg" alt="Remove"></button>
+          </div>
+          <div class="extra-icons">
+            <button class="icon-button"><img src="./assets/icons/mas-item.svg" alt="Add"></button>
+            <button class="icon-button"><img src="./assets/icons/copiar-item.svg" alt="Copy"></button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="day-row">
+        <input type="checkbox" id="vie" name="lun" class="day-checkbox" checked>
+        <label for="lun" class="day-label">VIE</label>
+        <div class="time-row">
+          <div class="time-inputs">
+            <input type="text" value="09:00" class="time-input">
+            <span class="dash">-</span>
+            <input type="text" value="17:00" class="time-input">
+            <button class="icon-button-remove"><img src="./assets/icons/remove.svg" alt="Remove"></button>
+          </div>
+          <div class="extra-icons">
+            <button class="icon-button"><img src="./assets/icons/mas-item.svg" alt="Add"></button>
+            <button class="icon-button"><img src="./assets/icons/copiar-item.svg" alt="Copy"></button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-row">
+        <input type="checkbox" id="sab" name="dom" class="day-checkbox">
+        <label for="dom" class="day-label">SAB</label>
+        <div class="time-row">
+        <span class="not-available-text">No disponible</span>
+      
+      
+        <div class="extra-icons extra-mobile">
+          <button class="icon-button"><img src="./assets/icons/mas-item.svg" alt="Add"></button>
+          <button class="icon-button"><img src="./assets/icons/copiar-item.svg" alt="Copy"></button>
+        </div>
+        </div>
+      </div>
+     
+    </div>
+    
+
+    <div class="divider-four"></div>
+
+
+    <div class="right-block">
+      <h2 class="block-title">Horas según el día</h2>
+      <p class="block-text">Modifique su disponibilidad para fechas específicas cuando sus horas difieran de sus horas semanales habituales.</p>
+      <button class="add-day-button"  id="openModalBtn">
+        <img src="./assets/icons/mas-item.svg" alt="Add">
+        Añadir horas según el día
+      </button>
+      <div class="day-specific-row">
+        <span class="specific-date">12 marzo, 2024</span>
+        <span class="not-available-text-two">No disponible</span>
+        <button class="icon-button-remove"><img src="./assets/icons/remove.svg" alt="Remove"></button>
+      </div>
+    </div>
+  </div>
+  
+  <div id="calendarViewContent" class="view-content hidden">
+    <div class="calendar-container">
+      <div class="calendar-header">
+        <div class="calendar-title-wrapper">
+          <h2 class="calendar-title">Marzo 2024</h2>
+          <p class="calendar-subtitle">Configurar sus horas semanales</p>
+        </div>
+        <div class="calendar-navigation">
+          <button class="nav-button prev-button">
+            <img src="./assets/icons/selects-arrows.svg" alt="Anterior">
+          </button>
+        </div>
+      </div>
+  
+      <div class="calendar-grid">
+        <!-- Días de la semana -->
+        <div class="calendar-day">DOM</div>
+        <div class="calendar-day">LUN</div>
+        <div class="calendar-day">MAR</div>
+        <div class="calendar-day">MIE</div>
+        <div class="calendar-day">JUE</div>
+        <div class="calendar-day">VIE</div>
+        <div class="calendar-day">SAB</div>
+  
+        <!-- Fechas del calendario (ejemplo de marzo) -->
+        <div class="calendar-cell empty-cell">
+          <div class="cell-header">
+            <span class="cell-number">25</span>
+           
+          </div>
+          <div class="cell-content">
+        
+          </div>
+        </div>
+        <div class="calendar-cell empty-cell">
+          <div class="cell-header">
+            <span class="cell-number">26</span>
+            <img class="cell-icon" src="./assets/icons/edit-empty.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell empty-cell">
+          <div class="cell-header">
+            <span class="cell-number">27</span>
+            <img class="cell-icon" src="./assets/icons/edit-empty.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell empty-cell">
+          <div class="cell-header">
+            <span class="cell-number">28</span>
+            <img class="cell-icon" src="./assets/icons/edit-empty.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell empty-cell">
+          <div class="cell-header">
+            <span class="cell-number">29</span>
+            <img class="cell-icon" src="./assets/icons/edit-empty.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">1</span>
+            <img class="cell-icon" src="./assets/icons/edit-normal.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">2</span>
+           
+          </div>
+          <div class="cell-content">
+            <span class="time-range"></span>
+          </div>
+        </div>
+     
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">3</span>
+           
+          </div>
+          <div class="cell-content">
+        
+          </div>
+        </div>
+        <div class="calendar-cell ">
+          <div class="cell-header">
+            <span class="cell-number">4</span>
+            <img class="cell-icon" src="./assets/icons/edit-empty.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">5</span>
+            <img class="cell-icon" src="./assets/icons/edit-normal.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">6</span>
+            <img class="cell-icon" src="./assets/icons/edit-normal.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">7</span>
+            <img class="cell-icon" src="./assets/icons/edit-normal.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">8</span>
+            <img class="cell-icon" src="./assets/icons/edit-normal.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">9</span>
+           
+          </div>
+          <div class="cell-content">
+            <span class="time-range"></span>
+          </div>
+        </div>
+
+    
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">10</span>
+           
+          </div>
+          <div class="cell-content">
+        
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">11</span>
+            <img class="cell-icon" src="./assets/icons/edit-normal.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">12</span>
+            <img class="cell-icon" src="./assets/icons/edit-normal.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">13</span>
+            <img class="cell-icon" src="./assets/icons/edit-normal.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">14</span>
+            <img class="cell-icon" src="./assets/icons/edit-normal.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">15</span>
+            <img class="cell-icon" src="./assets/icons/edit-normal.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">16</span>
+           
+          </div>
+          <div class="cell-content">
+            <span class="time-range"></span>
+          </div>
+        </div>
+
+
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">10</span>
+           
+          </div>
+          <div class="cell-content">
+        
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">11</span>
+            <img class="cell-icon" src="./assets/icons/edit-normal.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">12</span>
+            <img class="cell-icon" src="./assets/icons/edit-normal.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">13</span>
+            <img class="cell-icon" src="./assets/icons/edit-normal.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">14</span>
+            <img class="cell-icon" src="./assets/icons/edit-normal.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">15</span>
+            <img class="cell-icon" src="./assets/icons/edit-normal.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">16</span>
+           
+          </div>
+          <div class="cell-content">
+            <span class="time-range"></span>
+          </div>
+        </div>
+
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">10</span>
+           
+          </div>
+          <div class="cell-content">
+        
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">11</span>
+            <img class="cell-icon" src="./assets/icons/edit-normal.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">12</span>
+            <img class="cell-icon" src="./assets/icons/edit-normal.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">13</span>
+            <img class="cell-icon" src="./assets/icons/edit-normal.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">14</span>
+            <img class="cell-icon" src="./assets/icons/edit-normal.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">15</span>
+            <img class="cell-icon" src="./assets/icons/edit-normal.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">16</span>
+           
+          </div>
+          <div class="cell-content">
+            <span class="time-range"></span>
+          </div>
+        </div>
+
+        <div class="calendar-cell">
+          <div class="cell-header">
+            <span class="cell-number">10</span>
+           
+          </div>
+          <div class="cell-content">
+        
+          </div>
+        </div>
+        <div class="calendar-cell empty-cell">
+          <div class="cell-header">
+            <span class="cell-number">17</span>
+            <img class="cell-icon" src="./assets/icons/edit-empty.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell empty-cell">
+          <div class="cell-header">
+            <span class="cell-number">18</span>
+            <img class="cell-icon" src="./assets/icons/edit-empty.svg" alt="Icono">
+          </div>
+          <div class="cell-content empty-cell">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell empty-cell">
+          <div class="cell-header">
+            <span class="cell-number">19</span>
+            <img class="cell-icon" src="./assets/icons/edit-empty.svg" alt="Icono">
+          </div>
+          <div class="cell-content empty-cell">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell empty-cell">
+          <div class="cell-header">
+            <span class="cell-number">20</span>
+            <img class="cell-icon" src="./assets/icons/edit-empty.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell empty-cell">
+          <div class="cell-header">
+            <span class="cell-number">21</span>
+            <img class="cell-icon" src="./assets/icons/edit-empty.svg" alt="Icono">
+          </div>
+          <div class="cell-content">
+            <span class="time-range">09:00 - 17:00</span>
+          </div>
+        </div>
+        <div class="calendar-cell empty-cell">
+          <div class="cell-header">
+            <span class="cell-number">22</span>
+           
+          </div>
+          <div class="cell-content">
+            <span class="time-range"></span>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+
+<div id="editModal" class="modal-edit hidden">
+<div class="modal-content-calendar">
+  <button id="editDateBtn" class="modal-button-calendar">
+    <img src="./assets/icons/calendar-agenda.svg" alt="Ícono de calendario">
+   Editar<strong> fecha/s</strong>
+  </button>
+  <button id="editAllThursdaysBtn" class="modal-button-calendar">
+    <img src="./assets/icons/edit-normal.svg" alt="Ícono de edición de jueves">
+    Editar<strong> todos los jueves</strong>
+  </button>
+</div>
+</div>
+</div>
+
+<!-- Modal de añadir horas -->
+<div id="addHoursModal" class="modal-container hidden">
+  <div class="modal-content-tres">
+    <h2 class="modal-title">Seleccione la/s fecha/s a las<br> que desea asignar horas específicas</h2>
+    
+    <!-- Calendario (una imagen) -->
+    <div class="modal-calendar">
+      <img src="./assets/img/calendar-modal.svg" alt="Calendario">
+    </div>
+    
+    <h3 class="hours-title">¿Qué horas está disponible?</h3>
+    
+    <div class="time-inputs-container">
+      <input type="text" class="time-input" placeholder="9:00">
+      <span class="dash">-</span>
+      <input type="text" class="time-input" placeholder="17:00">
+      <button class="icon-button-remove"><img src="./assets/icons/remove.svg" alt="Remove"></button>
+      <button class="icon-button-add"><img src="./assets/icons/add-icon.svg" alt="Add"></button>
+    </div>
+    
+    <!-- Botones del modal -->
+    <div class="modal-buttons">
+      <button class="cancel-button">Cancelar</button>
+      <button class="apply-button">Aplicar</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL JUEVES -->
+<div id="editThursdaysModal" class="modal-thursday hidden">
+  <div class="modal-content-thursday">
+    <h2 class="modal-title">Disponibilidad del jueves</h2>
+    
+    <div class="time-inputs-thursday">
+      <p class="modal-subtitle">¿Qué horas esta disponible?</p>
+      <div class="time-input-group">
+        <input type="text" class="time-input" value="09:00" placeholder="HH:MM">
+        <span class="dash">-</span>
+        <input type="text" class="time-input" value="17:00" placeholder="HH:MM">
+        <button class="icon-button-remove"><img src="./assets/icons/remove.svg" alt="Remove"></button>
+        <button class="icon-button-add"><img src="./assets/icons/add-icon.svg" alt="Add"></button>
+      </div>
+    </div>
+
+    <div class="modal-buttons">
+      <button class="cancel-button">Cancelar</button>
+      <button class="apply-button">Aplicar</button>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+
+    <!-- Contenido de la sección Inicio -->
+    <section id="inicio" class="inicio-section visible">
+      <div class="profile">
+        <img src="./assets/icons/trini-home.svg" alt="Trini Salud" class="profile-img">
+        <h2>Trini <span class="highlight-text">Salud</span></h2>
+      </div>
+
+      <div class="options-grid">
+       <button  class="option-btn"> Añadir turno</button>
+        <button class="option-btn">Consultar disponibilidad de profesional</button>
+        <button class="option-btn">Información de un<br>paciente</button>
+        <button class="option-btn">Total de turnos<br> completados</button>
+      </div>
+
+      <div class="message-box">
+        <div class="input-container">
+          <input type="text" placeholder="Envia un mensaje a Trini Salud">
+          <button type="submit" class="send-button">
+            <img src="./assets/icons/arrow-send.svg" alt="Enviar">
+          </button>
+        </div>
+      </div>
+    </section>
+
+<!-- SECCION AGENDA -->
+
+<section id="agenda" class="agenda-section hidden">
+  <div class="agenda-header">
+    <h1>Turnos de hoy</h1>
+    <div class="agenda-controls">
+      <select class="agenda-select">
+        <option value="todos">Todos los turnos</option>
+      </select>
+      <div class="search-wrapper">
+        <input type="text" class="agenda-search" placeholder="Buscar Profesional, Dirección, Paciente">
+        <img src="./assets/icons/search.svg" class="search-icon" alt="Buscar">
+      </div>
+    </div>
+  </div>
+  
+  <div class="agenda-top">
+    <h2>Cenere</h2>
+    <button class="add-turno-btn">Añadir turno</button>
+  </div>
+  
+  <div class="linea-divisoria"></div>
+
+  <div class="cards-container">
+    <div class="agenda-card">
+      <div class="card-header">
+        <h3>Kinesiología</h3>
+        <img src="./assets/icons/tuerca.svg" alt="Ajustes" class="settings-icon">
+      </div>
+      <p>6 turnos hoy</p>
+      <div class="horarios">
+        <span class="hora">09:15</span>
+        <span class="hora">10:15</span>
+        <span class="hora">11:15</span>
+        <span class="hora">12:15</span>
+        <span class="hora">13:15</span>
+        <span class="hora">14:15</span>
+      </div>
+      <p>10 turnos esta semana</p>
+      <p>Dirección: Lorem ipsum, dolor sit amet, consectetur, adipiscing elit 123.</p>
+      <div class="card-footer">
+        <a href="#" class="copy-link">Copiar link</a>
+        <button class="ver-mas-btn" onclick="mostrarAgendaKinesiologia()">Ver más</button>
+      </div>
+    </div>
+
+    <div class="agenda-card">
+      <div class="card-header">
+        <h3>Profesional Dos</h3>
+        <img src="./assets/icons/tuerca.svg" alt="Ajustes" class="settings-icon">
+      </div>
+      <p>6 turnos hoy</p>
+      <div class="horarios">
+        <span class="hora">09:15</span>
+        <span class="hora">10:15</span>
+      
+      </div>
+      <p>2s turnos esta semana</p>
+      <p>Dirección: Lorem ipsum, dolor sit amet, consectetur, adipiscing elit 123.</p>
+      <div class="card-footer">
+        <a href="#" class="copy-link">Copiar link</a>
+        <button class="ver-mas-btn">Ver más</button>
+      </div>
+    </div>
+
+
+    <div class="agenda-card">
+      <div class="card-header">
+        <h3>Profesional Tres</h3>
+        <img src="./assets/icons/tuerca.svg" alt="Ajustes" class="settings-icon">
+      </div>
+      <p>6 turnos hoy</p>
+      <div class="horarios">
+        <span class="hora">09:15</span>
+        <span class="hora">10:15</span>
+        <span class="hora">11:15</span>
+        <span class="hora">12:15</span>
+        <span class="hora">13:15</span>
+        <span class="hora">14:15</span>
+      </div>
+      <p>10 turnos esta semana</p>
+      <p>Dirección: Lorem ipsum, dolor sit amet, consectetur, adipiscing elit 123.</p>
+      <div class="card-footer">
+        <a href="#" class="copy-link">Copiar link</a>
+        <button class="ver-mas-btn">Ver más</button>
+      </div>
+    </div>
+
+
+
+    <div class="agenda-card">
+      <div class="card-header">
+        <h3>Profesional Cuatro</h3>
+        <img src="./assets/icons/tuerca.svg" alt="Ajustes" class="settings-icon">
+      </div>
+      <p>6 turnos hoy</p>
+      <div class="horarios">
+        <span class="hora">09:15</span>
+        <span class="hora">10:15</span>
+        <span class="hora">11:15</span>
+        <span class="hora">12:15</span>
+        <span class="hora">13:15</span>
+        <span class="hora">14:15</span>
+      </div>
+      <p>1 turno esta semana</p>
+      <p>Dirección: Lorem ipsum, dolor sit amet, consectetur, adipiscing elit 123.</p>
+      <div class="card-footer">
+        <a href="#" class="copy-link">Copiar link</a>
+        <button class="ver-mas-btn">Ver más</button>
+      </div>
+    </div>
+
+    <div class="agenda-card">
+      <div class="card-header">
+        <h3>Profesional Cinco</h3>
+        <img src="./assets/icons/tuerca.svg" alt="Ajustes" class="settings-icon">
+      </div>
+      <p>6 turnos hoy</p>
+      <div class="horarios">
+        <span class="hora">09:15</span>
+        <span class="hora">10:15</span>
+    
+      </div>
+      <p>6 turnos esta semana</p>
+      <p>Dirección: Lorem ipsum, dolor sit amet, consectetur, adipiscing elit 123.</p>
+      <div class="card-footer">
+        <a href="#" class="copy-link">Copiar link</a>
+        <button class="ver-mas-btn">Ver más</button>
+      </div>
+    </div>
+
+    <div class="agenda-card">
+      <div class="card-header">
+        <h3>Profesional Seis</h3>
+        <img src="./assets/icons/tuerca.svg" alt="Ajustes" class="settings-icon">
+      </div>
+      <p>6 turnos hoy</p>
+      <div class="horarios">
+        <span class="hora">09:15</span>
+       
+        <span class="hora">11:15</span>
+       
+        <span class="hora">13:15</span>
+        <span class="hora">14:15</span>
+      </div>
+      <p>10 turnos esta semana</p>
+      <p>Dirección: Lorem ipsum, dolor sit amet, consectetur, adipiscing elit 123.</p>
+      <div class="card-footer">
+        <a href="#" class="copy-link">Copiar link</a>
+        <button class="ver-mas-btn">Ver más</button>
+      </div>
+    </div>
+
+  </div>
+  <div class="linea-divisoria"></div>
+    <div class="metrics-container">
+      <!-- Primera fila de cards con números -->
+      <div class="metric-card">
+        <h2>120</h2>
+        <p>Turnos</p>
+      </div>
+      <div class="metric-card">
+        <h2>54</h2>
+        <p>Profesionales</p>
+      </div>
+      <div class="metric-card">
+        <h2>245</h2>
+        <p>Pacientes</p>
+      </div>
+    </div>
+  
+    <!-- Card más grande con título y gráfico -->
+    <div class="metric-graph-card">
+      <h3>Título</h3>
+      <div class="graph-placeholder">
+      
+        <img src="./assets/icons/grafico.svg" alt="Gráfico de métrica" class="graph-image">
+      </div>
+    </div>
+
+  
+</section>
+
+<section id="kinesiologia-agenda" class="kinesiologia-agenda  hidden">
+  <h1>Turnos de hoy</h1>
+  <div class="agenda-header-kinesio">
+
+    <div class="agenda-filters">
+      <select class="agenda-select">
+        <option value="todos">Todos los turnos</option>
+        <option value="todos">Turno recurrente</option>
+        <option value="todos">Primer turno</option>
+      </select>
+      <div class="search-wrapper">
+        <input type="text" class="agenda-search" placeholder="Buscar Profesional, Dirección, Paciente">
+        <img src="./assets/icons/search.svg" class="search-icon" alt="Buscar">
+      </div> 
+    
+    </div>
+    
+    <div class="agenda-actions">
+      <button id="boton-abrir-formulario" class="add-turno-btn-kine" onclick="abrirModal()">Añadir turno</button>
+
+    </div>
+  </div>
+  <div class="agenda-content">
+    <div class="agenda-title-container">
+      <h4 class="agenda-title">Agenda kinesiología</h4>
+      <button class="cancelacion-btn">Cancelación masiva</button>
+    </div>
+
+ 
+    
+
+  </div>
+<hr class="divider-2">
+
+
+<div class="agenda-tabla">
+  <div class="tabla-header">
+    <h3 class="agenda-fecha">Lunes 20 de Mayo 2024</h3>
+  </div>
+  <div class="tabla-container">
+    <!-- Hora 08:00 -->
+    <div class="tabla-row">
+      <div class="hora-label">08:00</div>
+      <div class="turnos-column">
+        <div class="turno-item verde">María Victoria RODRIGUEZ</div>
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      </div>
+      <div class="turnos-column">
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+        <div class="turno-item disponible">Disponible</div>
+      </div>
+      <div class="turnos-column">
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      </div>
+      <div class="turnos-column">
+        <div class="turno-item naranja">María Victoria RODRIGUEZ</div>
+        <div class="turno-item verde-agua">María Victoria RODRIGUEZ</div>
+      </div>
+    </div>
+    <!--Hora 08:45 -->
+    <div class="tabla-row">
+      <div class="hora-label">08:45</div>
+      <div class="turnos-column">
+        <div class="turno-item azul">María Victoria RODRIGUEZ</div>
+        <div class="turno-item celeste">María Victoria RODRIGUEZ</div>
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      </div>
+      <div class="turnos-column">
+        <div class="turno-item naranja">María Victoria RODRIGUEZ</div>
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      </div>
+      <div class="turnos-column">
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+
+      </div>
+      <div class="turnos-column">
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+        <div class="turno-item marron">María Victoria RODRIGUEZ</div>
+      </div>
+    </div>
+   <!--Hora 09:30 -->  
+   <div class="tabla-row">
+    <div class="hora-label">09:30</div>
+    <div class="turnos-column">
+      <div class="turno-item disponible">Disponible</div>
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item verde">María Victoria RODRIGUEZ</div>
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      <div class="turno-item verde-oscuro">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item azul-claro">María Victoria RODRIGUEZ</div>
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+    </div>
+  </div> 
+
+   <!--Hora 10:15-->  
+   <div class="tabla-row">
+    <div class="hora-label">10:15</div>
+    <div class="turnos-column">
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      <div class="turno-item naranja">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      <div class="turno-item celeste">María Victoria RODRIGUEZ</div>
+    </div>
+  </div> 
+   <!--Hora 11:00-->  
+   <div class="tabla-row">
+    <div class="hora-label">11:00</div>
+    <div class="turnos-column">
+      <div class="turno-item verde-agua">María Victoria RODRIGUEZ</div>
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      <div class="turno-item ">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      <div class="turno-item verde">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+    </div>
+  </div> 
+   <!--Hora 11:45-->  
+   <div class="tabla-row">
+    <div class="hora-label">11:45</div>
+    <div class="turnos-column">
+      <div class="turno-item verde-oscuro">María Victoria RODRIGUEZ</div>
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item verde-agua">María Victoria RODRIGUEZ</div>
+      <div class="turno-item gris ">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item disponible">Disponible</div>
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item naranja">María Victoria RODRIGUEZ</div>
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+    </div>
+  </div> 
+  <!--Hora 12:30-->  
+  <div class="tabla-row">
+    <div class="hora-label">12:30</div>
+    <div class="turnos-column">
+   
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+
+      <div class="turno-item gris ">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+  
+      <div class="turno-item verde-oscuro">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+ 
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+    </div>
+  </div> 
+  <!--Hora 13:15-->  
+  <div class="tabla-row">
+    <div class="hora-label">13:15</div>
+    <div class="turnos-column">
+   
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+
+      <div class="turno-item verde ">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+  
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+ 
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+    </div>
+  </div> 
+  <!--Hora 14:00-->  
+  <div class="tabla-row">
+    <div class="hora-label">14:00</div>
+    <div class="turnos-column">
+   
+      <div class="turno-item naranja">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+
+      <div class="turno-item gris ">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+  
+      <div class="turno-item verde-agua">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+ 
+      <div class="turno-item verde">María Victoria RODRIGUEZ</div>
+    </div>
+  </div>
+
+    <!--Hora 14:45-->  
+    <div class="tabla-row">
+      <div class="hora-label">14:45</div>
+      <div class="turnos-column">
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      </div>
+      <div class="turnos-column">
+        <div class="turno-item azul">María Victoria RODRIGUEZ</div> 
+        <div class="turno-item gris ">María Victoria RODRIGUEZ</div>
+      </div>
+      <div class="turnos-column">
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div> 
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      </div>
+      <div class="turnos-column">
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div> 
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      </div>
+    </div>
+
+     <!--Hora 15:30-->  
+     <div class="tabla-row">
+      <div class="hora-label">15:30</div>
+      <div class="turnos-column">
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+        <div class="turno-item azul-claro">María Victoria RODRIGUEZ</div>
+      </div>
+      <div class="turnos-column">
+        <div class="turno-item verde-agua">María Victoria RODRIGUEZ</div> 
+        <div class="turno-item gris ">María Victoria RODRIGUEZ</div>
+      </div>
+      <div class="turnos-column">
+        <div class="turno-item azul">María Victoria RODRIGUEZ</div> 
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      </div>
+      <div class="turnos-column">
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div> 
+        <div class="turno-item marron">María Victoria RODRIGUEZ</div>
+      </div>
+    </div> 
+    <!--Hora 16:15-->  
+    <div class="tabla-row">
+      <div class="hora-label">16:15</div>
+      <div class="turnos-column">
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      </div>
+      <div class="turnos-column">
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div> 
+        <div class="turno-item gris ">María Victoria RODRIGUEZ</div>
+      </div>
+      <div class="turnos-column">
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div> 
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      </div>
+      <div class="turnos-column">
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div> 
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      </div>
+    </div> 
+   <!--Hora 17:00-->  
+   <div class="tabla-row">
+    <div class="hora-label">17:00</div>
+    <div class="turnos-column">
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div> 
+      <div class="turno-item verde-agua ">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item azul-claro">María Victoria RODRIGUEZ</div> 
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div> 
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+    </div>
+  </div> 
+
+    <!--Hora 17:45-->  
+    <div class="tabla-row">
+      <div class="hora-label">17:45</div>
+      <div class="turnos-column">
+        <div class="turno-item marron">María Victoria RODRIGUEZ</div>
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      </div>
+      <div class="turnos-column">
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div> 
+        <div class="turno-item gris ">María Victoria RODRIGUEZ</div>
+      </div>
+      <div class="turnos-column">
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div> 
+        <div class="turno-item disponible">Disponible</div>
+      </div>
+      <div class="turnos-column">
+        <div class="turno-item celeste">María Victoria RODRIGUEZ</div> 
+        <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      </div>
+    </div> 
+
+  <!--Hora 18:30-->  
+  <div class="tabla-row">
+    <div class="hora-label">18:30</div>
+    <div class="turnos-column">
+      <div class="turno-item azul">María Victoria RODRIGUEZ</div>
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div> 
+      <div class="turno-item azul-claro ">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item verde">María Victoria RODRIGUEZ</div> 
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div> 
+      <div class="turno-item azul">María Victoria RODRIGUEZ</div>
+    </div>
+  </div> 
+  <!--Hora 19:15-->  
+  <div class="tabla-row">
+    <div class="hora-label">19:15</div>
+    <div class="turnos-column">
+      <div class="turno-item verde-agua">María Victoria RODRIGUEZ</div>
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div> 
+      <div class="turno-item verde ">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div> 
+      <div class="turno-item marron">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div> 
+      <div class="turno-item verde-agua">María Victoria RODRIGUEZ</div>
+    </div>
+  </div> 
+  <!--Hora 20:00-->  
+  <div class="tabla-row">
+    <div class="hora-label">20:00</div>
+    <div class="turnos-column">
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+      <div class="turno-item verde-agua">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div> 
+      <div class="turno-item gris ">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div> 
+      <div class="turno-item gris">María Victoria RODRIGUEZ</div>
+    </div>
+    <div class="turnos-column">
+      <div class="turno-item azul-claro">María Victoria RODRIGUEZ</div> 
+      <div class="turno-item verde">María Victoria RODRIGUEZ</div>
+    </div>
+  </div> 
+
+</div>
+</div>
+
+
+</section>
+
+<!-- Modal para el formulario de turno -->
+<div id="modal-formulario" class="modal-dos hidden">
+  <div class="modal-content-dos">
+    <span class="close-modal" onclick="cerrarModal()">&times;</span>
+    <h2 class="form-title">Añadir turno</h2>
+    <div class="modal-botones">
+      <button id="boton-recurrente" class="boton-modal" onclick="mostrarFormulario('recurrente')">Turno recurrente</button>
+      <button id="boton-unico" class="boton-modal activo" onclick="mostrarFormulario('unico')">Único turno</button>
+    </div>
+    
+     <!-- Formulario de turnos -->
+     <div id="formulario-recurrente" class="formulario hidden">
+      <form id="form-recurrente">
+        <!-- Paciente -->
+        <h3 class="form-subtitle">Paciente</h3>
+        <div class="form-row-dos">
+          <div class="form-group-dos">
+            <label for="dni">DNI*</label>
+            <div class="input-group">
+              <div class="input-container">
+                <input type="text" id="dni" class="form-input" placeholder="00.000.000">
+                <img src="./assets/icons/boton-consultar.svg" class="input-icon" onclick="consultarDNI()">
+              </div>
+            </div>
+          </div>
+          <div class="form-group-dos">
+            <label for="nombre-paciente">Nombre del paciente*</label>
+            <input type="text" id="nombre-paciente" class="form-input" placeholder="00.000.000">
+          </div>
+          <div class="form-group-dos">
+            <label for="apellido-paciente">Apellido del paciente*</label>
+            <input type="text" id="apellido-paciente" class="form-input" placeholder="00.000.000">
+          </div>
+        </div>
+    
+        <!-- Profesionales -->
+        <h3 class="form-subtitle">Profesionales</h3>
+        <div class="form-group-dos">
+       
+          <select id="profesionales" class="form-select-prof">
+            <option value="cenere-sur">Cenere Sur</option>
+          </select>
+        </div>
+    
+
+
+        <h3 class="form-subtitle">Modalidad</h3>
+        <div class="modalidad-container">
+          <div class="modalidad-row">
+            <div class="checkbox-group-dos">
+              <input type="checkbox" id="particular">
+              <label for="particular">Particular</label>
+            </div>
+            <div class="checkbox-group-dos">
+              <input type="checkbox" id="obra-social">
+              <label for="obra-social">Obra social</label>
+            </div>
+          </div>
+        
+          <div class="form-group-dos">
+            <label for="obra-social-select">Obra social</label>
+            <select id="obra-social-select" class="form-select">
+              <option value="">Seleccione una obra social</option>
+            </select>
+          </div>
+        
+          <div class="form-group-dos">
+            <label for="plan">Plan</label>
+            <select id="plan" class="form-select">
+              <option value=""></option>
+            </select>
+          </div>
+        
+          <div class="form-group-dos">
+            <label for="afiliado">Número de afiliado</label>
+            <input type="text" id="afiliado" class="form-input-dos">
+            <div class="rellenar-luego">
+              <input type="checkbox" id="rellenar-luego">
+              <label for="rellenar-luego">Rellenar más tarde</label>
+            </div>
+          </div>
+        
+          <div class="form-group-dos">
+            <div class="rellenar-luego">
+              <input type="checkbox" id="rellenar-luego">
+              <label for="rellenar-luego">Es consulta</label>
+            </div>
+
+
+          <div class="form-group-dos">
+            <label for="practicas">Prácticas</label>
+            <select id="practicas" class="form-select">
+              <option value=""></option>
+            </select>
+          </div>
+        </div>
+       
+   
+        </div>
+    
+        <!-- Agregar turnos -->
+        <h3 class="form-subtitle">Agregar turnos</h3>
+        <div class="form-row-dos">
+          <div class="form-group-dos">
+            <label for="fecha-inicio">Fecha de inicio*</label>
+            <input type="text" id="fecha-inicio" class="form-input" placeholder="DD/MM/AAAA">
+          </div>
+        
+          <div class="form-group-dos form-checkbox-input">
+            <div class="rellenar-luego-dos">
+              <input type="checkbox" id="fecha-fin">
+              <label for="fecha-fin">Fecha de fin</label>
+            </div>
+            <input type="text" id="fecha-fin-input" class="form-input" placeholder="DD/MM/AAAA">
+          </div>
+        
+          <div class="form-group-dos form-checkbox-input">
+            <div class="rellenar-luego-dos">
+              <input type="checkbox" id="cantidad-sesiones">
+              <label for="cantidad-sesiones">Cantidad de sesiones</label>
+            </div>
+            <input type="text" id="sesiones" class="form-input" placeholder="DD/MM/AAAA">
+          </div>
+        </div>
+        
+    
+        <!-- Frecuencia del turno -->
+        <div class="form-group-dos">
+          <label for="frecuencia-turno">Frecuencia del turno</label>
+          <select id="frecuencia-turno" class="form-select">
+            <option value="">Seleccione una frecuencia</option>
+          </select>
+        </div>
+    
+        <!-- Día y Horario -->
+        <div class="form-row-dos">
+          <div class="form-group-dos">
+            <label for="dia-repite">Día que se repite*</label>
+            <select id="dia-repite" class="form-select-dos">
+              <option value="">Lunes</option>
+            </select>
+          </div>
+          <div class="form-group-dos">
+            <label for="horario-repite">Horario que se repite*</label>
+            <select id="dia-repite" class="form-select-dos">
+              <option value=""></option>
+            </select>
+          </div>
+          <div class="form-group-dos">
+            <label for="direccion">Dirección*</label>
+            <input type="text" id="direccion" class="form-input">
+          </div>
+        </div>
+    
+        <!-- Observaciones -->
+        <div class="form-group-dos">
+          <h3 class="form-subtitle">Observaciones</h3>
+          <textarea id="observaciones" class="form-input"></textarea>
+        </div>
+    
+        <!-- Botones de acción -->
+        <div class="form-row-dos">
+          <div class="btn-container">
+            <button class="btn-confirmar">Confirmar turno</button>
+            <button class="btn-cancelar" onclick="cerrarModal()">Cancelar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div id="formulario-unico" class="formulario">
+      <form id="form-unico">
+        <!-- Paciente -->
+        <h3 class="form-subtitle">Paciente</h3>
+        <div class="form-row-dos">
+          <div class="form-group-dos">
+            <label for="dni">DNI*</label>
+            <div class="input-group">
+              <div class="input-container">
+                <input type="text" id="dni" class="form-input" placeholder="00.000.000">
+                <img src="./assets/icons/boton-consultar.svg" class="input-icon" onclick="consultarDNI()">
+              </div>
+            </div>
+          </div>
+          <div class="form-group-dos">
+            <label for="nombre-paciente">Nombre del paciente*</label>
+            <input type="text" id="nombre-paciente" class="form-input" placeholder="00.000.000">
+          </div>
+          <div class="form-group-dos">
+            <label for="apellido-paciente">Apellido del paciente*</label>
+            <input type="text" id="apellido-paciente" class="form-input" placeholder="00.000.000">
+          </div>
+        </div>
+    
+        <!-- Profesionales -->
+        <h3 class="form-subtitle">Profesionales</h3>
+        <div class="form-group-dos">
+       
+          <select id="profesionales" class="form-select-prof">
+            <option value="cenere-sur">Cenere Sur</option>
+          </select>
+        </div>
+    
+
+
+        <h3 class="form-subtitle">Modalidad</h3>
+        <div class="modalidad-container">
+          <div class="modalidad-row">
+            <div class="checkbox-group-dos">
+              <input type="checkbox" id="particular">
+              <label for="particular">Particular</label>
+            </div>
+            <div class="checkbox-group-dos">
+              <input type="checkbox" id="obra-social">
+              <label for="obra-social">Obra social</label>
+            </div>
+          </div>
+        
+          <div class="form-group-dos">
+            <label for="obra-social-select">Obra social</label>
+            <select id="obra-social-select" class="form-select">
+              <option value="">Seleccione una obra social</option>
+            </select>
+          </div>
+        
+          <div class="form-group-dos">
+            <label for="plan">Plan</label>
+            <select id="plan" class="form-select">
+              <option value=""></option>
+            </select>
+          </div>
+        
+          <div class="form-group-dos">
+            <label for="afiliado">Número de afiliado</label>
+            <input type="text" id="afiliado" class="form-input-dos">
+            <div class="rellenar-luego">
+              <input type="checkbox" id="rellenar-luego">
+              <label for="rellenar-luego">Rellenar más tarde</label>
+            </div>
+          </div>
+        
+          <div class="form-group-dos">
+            <div class="rellenar-luego">
+              <input type="checkbox" id="rellenar-luego">
+              <label for="rellenar-luego">Es consulta</label>
+            </div>
+
+
+          <div class="form-group-dos">
+            <label for="practicas">Prácticas</label>
+            <select id="practicas" class="form-select">
+              <option value=""></option>
+            </select>
+          </div>
+        </div>
+       
+   
+        </div>
+    
+    
+        <!-- Observaciones -->
+        <div class="form-group-dos">
+          <h3 class="form-subtitle">Observaciones</h3>
+          <textarea id="observaciones" class="form-input"></textarea>
+        </div>
+    
+        <!-- Botones de acción -->
+        <div class="form-row-dos">
+          <div class="btn-container">
+            <button class="btn-confirmar">Confirmar turno</button>
+            <button class="btn-cancelar" onclick="cerrarModal()">Cancelar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- SECCION TURNOS -->
+
+<section id="turnos" class="turnos-section hidden">
+  <!-- Parte superior con métricas -->
+  <div class="metrics-container">
+    <div class="metric-card">
+      <h2>120</h2>
+      <p>Turnos</p>
+    </div>
+    <div class="metric-card metric-image-card">
+      <img src="./assets/img/presentismo.svg" alt="Presentismo" class="metric-image">
+    </div>
+  </div>
+
+  <!-- Botones de navegación -->
+  <div class="navigation-buttons">
+    <button class="nav-btn active">PRÓXIMOS</button>
+    <button class="nav-btn">PENDIENTES</button>
+    <button class="nav-btn">PASADOS</button>
+  </div>
+
+  <div class="filter-section">
+    <div class="filter-left" id="filterToggle">
+        <p>Filtros</p>
+        <img src="./assets/icons/poligon.svg" alt="Filter icon" class="filter-icon">
+    </div>
+    <div class="filter-right">
+        <a href="#" class="filter-link">Descargar</a>/
+        <a href="#" class="filter-link">Imprimir</a>
+    </div>
+</div>
+
+<!-- Contenedor de los filtros y botones ocultos inicialmente -->
+<div id="filters-container" class="filters-container hidden">
+  <div class="left-column">
+    <div class="date-fields">
+        <div class="input-group">
+            <input id="fecha-desde" placeholder="Fecha desde">
+        </div>
+        <div class="input-group">
+            <input  id="fecha-hasta" placeholder="Fecha hasta">
+        </div>
+    </div>
+
+    <div class="input-group full-width">
+        <select id="obras-sociales">
+            <option value="" disabled selected>OBRAS SOCIALES</option>
+        </select>
+    </div>
+
+    <div class="checkbox-group">
+        <div class="checkbox-item">
+   
+          <a href="#"><label for="confirmados">SOLO CONFIRMADOS</label></a>
+        </div>
+        <div class="checkbox-item">
+       
+           <a href="#"><label for="no-confirmados">SOLO NO CONFIRMADOS</label></a>
+        </div>
+    </div>
+  </div>
+
+  <div class="right-column">
+    <select class="filter-select" id="pacientes">
+      <option disabled selected>Pacientes</option>
+    </select>
+    <select class="filter-select" id="planes">
+      <option disabled selected>PLANES</option>
+    </select>
+    <select class="filter-select" id="profesionales">
+      <option disabled selected>PROFESIONALES</option>
+    </select>
+  </div>
+
+  <!-- Botones -->
+  <div class="filter-buttons">
+    <button class="filter-btn limpiar-btn">LIMPIAR</button>
+    <button class="filter-btn buscar-btn">BUSCAR</button>
+  </div>
+</div>
+
+
+
+
+
+
+
+  <!-- Tabla de turnos -->
+  <div class="turnos-table-container">
+    <table class="turnos-table">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th>Dirección</th>
+          <th>Convenio</th>
+          <th>Paciente</th>
+          <th>Estado</th>
+          <th>Profesional/Centro</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Ejemplo de filas -->
+        <tr>
+          <td><span class="table-cell">01/03/24</span></td>
+          <td><span class="table-cell">09:15</span></td>
+          <td class="bg-two">Lorem Ipsum</td>
+          <td>Lorem Ipsum</td>
+          <td class="bg-two">Lorem Ipsum</td>
+          <td>Lorem Ipsum</td>
+          <td class="bg-two">Lorem Ipsum</td>
+          <td><button class="cancel-btn">Cancelar</button></td>
+        </tr>
+        <tr>
+          <td><span class="table-cell">01/03/24</span></td>
+          <td><span class="table-cell">09:15</span></td>
+          <td class="bg-two">Lorem Ipsum</td>
+          <td>Lorem Ipsum</td>
+          <td class="bg-two">Lorem Ipsum</td>
+          <td>Lorem Ipsum</td>
+          <td class="bg-two">Lorem Ipsum</td>
+          <td><button class="cancel-btn">Cancelar</button></td>
+        </tr> 
+        <tr>
+          <td><span class="table-cell">01/03/24</span></td>
+          <td><span class="table-cell">09:15</span></td>
+          <td class="bg-two">Lorem Ipsum</td>
+          <td>Lorem Ipsum</td>
+          <td class="bg-two">Lorem Ipsum</td>
+          <td>Lorem Ipsum</td>
+          <td class="bg-two">Lorem Ipsum</td>
+          <td><button class="cancel-btn">Cancelar</button></td>
+        </tr> 
+        <tr>
+          <td><span class="table-cell">01/03/24</span></td>
+          <td><span class="table-cell">09:15</span></td>
+          <td class="bg-two">Lorem Ipsum</td>
+          <td>Lorem Ipsum</td>
+          <td class="bg-two">Lorem Ipsum</td>
+          <td>Lorem Ipsum</td>
+          <td class="bg-two">Lorem Ipsum</td>
+          <td><button class="cancel-btn">Cancelar</button></td>
+        </tr>
+        <tr>
+          <td><span class="table-cell">01/03/24</span></td>
+          <td><span class="table-cell">09:15</span></td>
+          <td class="bg-two">Lorem Ipsum</td>
+          <td>Lorem Ipsum</td>
+          <td class="bg-two">Lorem Ipsum</td>
+          <td>Lorem Ipsum</td>
+          <td class="bg-two">Lorem Ipsum</td>
+          <td><button class="cancel-btn">Cancelar</button></td>
+        </tr>
+        <tr>
+          <td><span class="table-cell">01/03/24</span></td>
+          <td><span class="table-cell">09:15</span></td>
+          <td class="bg-two">Lorem Ipsum</td>
+          <td>Lorem Ipsum</td>
+          <td class="bg-two">Lorem Ipsum</td>
+          <td>Lorem Ipsum</td>
+          <td class="bg-two">Lorem Ipsum</td>
+          <td><button class="cancel-btn">Cancelar</button></td>
+        </tr>
+        <tr >
+          <td class="ultimo"><span class="table-cell">01/03/24</span></td>
+          <td class="ultimo"><span class="table-cell">09:15</span></td>
+          <td class="bg-two ultimo" >Lorem Ipsum</td>
+          <td class="ultimo">Lorem Ipsum</td>
+          <td class="bg-two ultimo" >Lorem Ipsum</td>
+          <td class="ultimo">Lorem Ipsum</td>
+          <td class="bg-two ultimo">Lorem Ipsum</td>
+          <td class="ultimo"><button class="cancel-btn">Cancelar</button></td>
+        </tr>
+        <!-- Repetir más filas según sea necesario -->
+      </tbody>
+    </table>
+  </div>
+
+
+
+  <div class="appointment-item mobile-only">
+    <div class="appointment-card">
+      <div class="top-row">
+          <span class="appointment-date">01/03/24 - 09:15</span>
+          <span class="appointment-patient">Paciente</span>
+          <span class="appointment-convenio">Convenio</span>
+      </div>
+      <div class="middle-row">
+          <span class="appointment-address">Dirección</span>
+          <span class="appointment-professional">Profesional/Centro</span>
+      </div>
+      <div class="bottom-row">
+          <span class="appointment-status">Confirmado/no confirmado</span>
+          <button class="cancel-btn">Cancelar</button>
+      </div>
+  </div>
+  <div class="appointment-card">
+    <div class="top-row">
+        <span class="appointment-date">01/03/24 - 09:15</span>
+        <span class="appointment-patient">Paciente</span>
+        <span class="appointment-convenio">Convenio</span>
+    </div>
+    <div class="middle-row">
+        <span class="appointment-address">Dirección</span>
+        <span class="appointment-professional">Profesional/Centro</span>
+    </div>
+    <div class="bottom-row">
+        <span class="appointment-status">Confirmado/no confirmado</span>
+        <button class="cancel-btn">Cancelar</button>
+    </div>
+</div> 
+<div class="appointment-card">
+  <div class="top-row">
+      <span class="appointment-date">01/03/24 - 09:15</span>
+      <span class="appointment-patient">Paciente</span>
+      <span class="appointment-convenio">Convenio</span>
+  </div>
+  <div class="middle-row">
+      <span class="appointment-address">Dirección</span>
+      <span class="appointment-professional">Profesional/Centro</span>
+  </div>
+  <div class="bottom-row">
+      <span class="appointment-status">Confirmado/no confirmado</span>
+      <button class="cancel-btn">Cancelar</button>
+  </div>
+</div>
+<div class="appointment-card">
+  <div class="top-row">
+      <span class="appointment-date">01/03/24 - 09:15</span>
+      <span class="appointment-patient">Paciente</span>
+      <span class="appointment-convenio">Convenio</span>
+  </div>
+  <div class="middle-row">
+      <span class="appointment-address">Dirección</span>
+      <span class="appointment-professional">Profesional/Centro</span>
+  </div>
+  <div class="bottom-row">
+      <span class="appointment-status">Confirmado/no confirmado</span>
+      <button class="cancel-btn">Cancelar</button>
+  </div>
+</div> 
+  
+  </div>
+
+
+  <!-- Paginación -->
+  <div class="pagination">
+    <span class="page-arrow">
+        <img src="./assets/icons/arrow-left.svg" alt="Previous">
+    </span>
+    <span class="page-number active">1</span>
+    <span class="page-number">2</span>
+    <span class="page-number">3</span>
+    <span class="page-number">4</span>
+    <span class="page-number">5</span>
+    <span class="page-arrow">
+        <img src="./assets/icons/arrow-right.svg" alt="Next">
+    </span>
+</div>
+</section>
+
+<!-- Sección Profesionales -->
+<section id="prof" class="profesionales-section hidden">
+  <!-- Contenedor de métricas con el mismo header que Turnos -->
+  <div class="metrics-container">
+    <div class="metric-card">
+      <h2>54</h2> <!-- Cambiar el número según corresponda -->
+      <p>Profesionales</p>
+    </div>
+    <div class="metric-card metric-image-card">
+      <img src="./assets/img/presentismo.svg" alt="Presentismo" class="metric-image">
+    </div>
+  </div>
+
+  <!-- Título de la sección -->
+  <h3 class="section-title">Profesionales activos</h3>
+
+  <!-- Contenedor de búsqueda y botones -->
+  <div class="search-bar-container">
+    <input type="text" class="search-input" placeholder="Nombre, Apellido o DNI">
+    <button class="search-btn">BUSCAR</button>
+    <button class="add-btn">AÑADIR</button>
+  </div>
+
+  <div class="turnos-table-container">
+    <table class="turnos-table">
+      <thead>
+        <tr>
+          <th>Profesional</th>
+          <th>Turnos</th>
+          <th>Historias clínicas</th>
+          <th>Disponibilidad</th>
+          <th>Desvincular</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td ><span>Lorem ipsum</span></td>
+          <td><img src="./assets/icons/turnos.svg" alt="Turnos" class="icon-img"></td>
+          <td><img src="./assets/icons/historial.svg" alt="Historias Clínicas" class="icon-img"></td>
+          <td><img src="./assets/icons/disponibilidad.svg" alt="Disponibilidad" class="icon-img"></td>
+          <td><img src="./assets/icons/borrar.svg" alt="Eliminar" class="icon-img"></td>
+        </tr>
+        <tr>
+          <td ><span>Lorem ipsum</span></td>
+          <td><img src="./assets/icons/turnos.svg" alt="Turnos" class="icon-img"></td>
+          <td><img src="./assets/icons/historial.svg" alt="Historias Clínicas" class="icon-img"></td>
+          <td><img src="./assets/icons/disponibilidad.svg" alt="Disponibilidad" class="icon-img"></td>
+          <td><img src="./assets/icons/borrar.svg" alt="Eliminar" class="icon-img"></td>
+        </tr>
+        <tr>
+          <td ><span>Lorem ipsum</span></td>
+          <td><img src="./assets/icons/turnos.svg" alt="Turnos" class="icon-img"></td>
+          <td><img src="./assets/icons/historial.svg" alt="Historias Clínicas" class="icon-img"></td>
+          <td><img src="./assets/icons/disponibilidad.svg" alt="Disponibilidad" class="icon-img"></td>
+          <td><img src="./assets/icons/borrar.svg" alt="Eliminar" class="icon-img"></td>
+        </tr>
+        <tr>
+          <td ><span>Lorem ipsum</span></td>
+          <td><img src="./assets/icons/turnos.svg" alt="Turnos" class="icon-img"></td>
+          <td><img src="./assets/icons/historial.svg" alt="Historias Clínicas" class="icon-img"></td>
+          <td><img src="./assets/icons/disponibilidad.svg" alt="Disponibilidad" class="icon-img"></td>
+          <td><img src="./assets/icons/borrar.svg" alt="Eliminar" class="icon-img"></td>
+        </tr>
+        <tr>
+          <td ><span>Lorem ipsum</span></td>
+          <td><img src="./assets/icons/turnos.svg" alt="Turnos" class="icon-img"></td>
+          <td><img src="./assets/icons/historial.svg" alt="Historias Clínicas" class="icon-img"></td>
+          <td><img src="./assets/icons/disponibilidad.svg" alt="Disponibilidad" class="icon-img"></td>
+          <td><img src="./assets/icons/borrar.svg" alt="Eliminar" class="icon-img"></td>
+        </tr>
+        <tr>
+          <td class="ultimo" ><span>Lorem ipsum</span></td>
+          <td class="ultimo"><img src="./assets/icons/turnos.svg" alt="Turnos" class="icon-img"></td>
+          <td class="ultimo"><img src="./assets/icons/historial.svg" alt="Historias Clínicas" class="icon-img"></td>
+          <td class="ultimo"><img src="./assets/icons/disponibilidad.svg" alt="Disponibilidad" class="icon-img"></td>
+          <td class="ultimo"><img src="./assets/icons/borrar.svg" alt="Eliminar" class="icon-img"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="appointment-item mobile-only">
+    <div class="appointment-card">
+      <div class="top-row">
+          <span class="appointment-date">01/03/24 - 09:15</span>
+          <span class="appointment-patient">Paciente</span>
+          <span class="appointment-convenio">Convenio</span>
+      </div>
+      <div class="middle-row">
+          <span class="appointment-address">Dirección</span>
+          <span class="appointment-professional">Profesional/Centro</span>
+      </div>
+      <div class="bottom-row">
+          <span class="appointment-status">Confirmado/no confirmado</span>
+          <button class="cancel-btn">Cancelar</button>
+      </div>
+  </div>
+  <div class="appointment-card">
+    <div class="top-row">
+        <span class="appointment-date">01/03/24 - 09:15</span>
+        <span class="appointment-patient">Paciente</span>
+        <span class="appointment-convenio">Convenio</span>
+    </div>
+    <div class="middle-row">
+        <span class="appointment-address">Dirección</span>
+        <span class="appointment-professional">Profesional/Centro</span>
+    </div>
+    <div class="bottom-row">
+        <span class="appointment-status">Confirmado/no confirmado</span>
+        <button class="cancel-btn">Cancelar</button>
+    </div>
+</div> 
+
+
+  
+  </div>
+ 
+  <div class="pagination">
+    <span class="page-arrow">
+        <img src="./assets/icons/arrow-left.svg" alt="Previous">
+    </span>
+    <span class="page-number active">1</span>
+    <span class="page-number">2</span>
+    <span class="page-number">3</span>
+    <span class="page-number">4</span>
+    <span class="page-number">5</span>
+    <span class="page-arrow">
+        <img src="./assets/icons/arrow-right.svg" alt="Next">
+    </span>
+</div>
+
+
+<h3 class="section-title">Profesionales en espera <br>de validación de cuenta</h3>
+
+<div class="turnos-table-container">
+  <table class="turnos-table">
+    <thead>
+      <tr>
+        <th>Profesional</th>
+        <th>Acciones</th>
+     
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td ><span>Lorem ipsum</span></td>
+        <td><span>Cancelar solicitud</span></td>
+
+      </tr>
+      <tr>
+        <td class="ultimo"><span>Lorem ipsum</span></td>
+        <td class="ultimo"><span>Cancelar solicitud</span></td> 
+      </tr>
+   
+    </tbody>
+  </table>
+</div>
+
+<h3 class="section-title">Profesionales en espera
+ <br>de autorización</h3>
+
+
+<div class="turnos-table-container">
+  <table class="turnos-table">
+    <thead>
+      <tr>
+        <th>Profesional</th>
+        <th>Acciones</th>
+     
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td ><span>Lorem ipsum</span></td>
+        <td><span>Cancelar solicitud</span></td>
+
+      </tr>
+      <tr>
+        <td class="ultimo"><span>Lorem ipsum</span></td>
+        <td class="ultimo"><span>Cancelar solicitud</span></td> 
+      </tr>
+   
+    </tbody>
+  </table>
+</div>
+
+
+
+</section>
+
+
+<!-- Sección Pacientes -->
+<section id="paci" class="pacientes-section hidden">
+
+  <div id="pacientes-interna">
+  <!-- Contenedor de métricas -->
+  <div class="metrics-container-pacientes">
+    <div class="metric-card">
+      <h2>2390</h2> <!-- Primer número de la métrica -->
+      <p>Total de pacientes</p>
+    </div>
+    <div class="metric-card smaller">
+      <h2>2308</h2> <!-- Segundo número de la métrica -->
+      <p>Pacientes atendidos</p>
+    </div>
+    <div class="metric-card smaller">
+      <h2>14</h2> <!-- Tercer número de la métrica -->
+      <p>Atendidos este mes</p>
+    </div>
+  </div>
+
+  <!-- Título de la sección -->
+  <h3 class="section-title">Buscar paciente</h3>
+
+  <!-- Contenedor de búsqueda y botones -->
+  <div class="search-bar-container">
+    <input type="text" class="search-input" placeholder="Nombre, Apellido o DNI">
+    <button class="search-btn">BUSCAR</button>
+    <button class="add-btn" id="addNewPatient">AÑADIR</button>
+  </div>
+ <div class="turnos-table-container">
+    <table class="turnos-table">
+      <thead>
+        <tr>
+          <th>Paciente</th>
+          <th>DNI</th>
+          <th>Mail</th>
+          <th>Teléfono</th>
+          <th>Próximos<br> turnos </th>
+         <th>Historia clínica</th>
+         <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td ><span>Lorem ipsum</span></td>
+          <td ><span>00.000.000</span></td>
+          <td ><span>Lore. ipsum@Loremipsum.com</span></td>
+          <td ><span>+00 000 0000 000</span></td>
+          <td><img src="./assets/icons/turnos.svg" alt="Turnos" class="icon-img"></td>
+          <td><img src="./assets/icons/historial.svg" alt="Historias Clínicas" class="icon-img"></td>
+          <td><img src="./assets/icons/borrar.svg" alt="Eliminar" class="icon-img"></td>
+        </tr>
+        <tr>
+          <td ><span>Lorem ipsum</span></td>
+          <td ><span>00.000.000</span></td>
+          <td ><span>Lore. ipsum@Loremipsum.com</span></td>
+          <td ><span>+00 000 0000 000</span></td>
+          <td><img src="./assets/icons/turnos.svg" alt="Turnos" class="icon-img"></td>
+          <td><img src="./assets/icons/historial.svg" alt="Historias Clínicas" class="icon-img"></td>
+          <td><img src="./assets/icons/borrar.svg" alt="Eliminar" class="icon-img"></td>
+        </tr>
+        <tr>
+          <td ><span>Lorem ipsum</span></td>
+          <td ><span>00.000.000</span></td>
+          <td ><span>Lore. ipsum@Loremipsum.com</span></td>
+          <td ><span>+00 000 0000 000</span></td>
+          <td><img src="./assets/icons/turnos.svg" alt="Turnos" class="icon-img"></td>
+          <td><img src="./assets/icons/historial.svg" alt="Historias Clínicas" class="icon-img"></td>
+          <td><img src="./assets/icons/borrar.svg" alt="Eliminar" class="icon-img"></td>
+        </tr>
+        <tr>
+          <td ><span>Lorem ipsum</span></td>
+          <td ><span>00.000.000</span></td>
+          <td ><span>Lore. ipsum@Loremipsum.com</span></td>
+          <td ><span>+00 000 0000 000</span></td>
+          <td><img src="./assets/icons/turnos.svg" alt="Turnos" class="icon-img"></td>
+          <td><img src="./assets/icons/historial.svg" alt="Historias Clínicas" class="icon-img"></td>
+          <td><img src="./assets/icons/borrar.svg" alt="Eliminar" class="icon-img"></td>
+        </tr>
+        <tr>
+          <td ><span>Lorem ipsum</span></td>
+          <td ><span>00.000.000</span></td>
+          <td ><span>Lore. ipsum@Loremipsum.com</span></td>
+          <td ><span>+00 000 0000 000</span></td>
+          <td><img src="./assets/icons/turnos.svg" alt="Turnos" class="icon-img"></td>
+          <td><img src="./assets/icons/historial.svg" alt="Historias Clínicas" class="icon-img"></td>
+          <td><img src="./assets/icons/borrar.svg" alt="Eliminar" class="icon-img"></td>
+        </tr> 
+        <tr>
+          <td class="ultimo" ><span>Lorem ipsum</span></td>
+          <td class="ultimo" ><span>00.000.000</span></td>
+          <td class="ultimo" ><span>Lore. ipsum@Loremipsum.com</span></td>
+          <td class="ultimo"><span>+00 000 0000 000</span></td>
+          <td class="ultimo"><img src="./assets/icons/turnos.svg" alt="Turnos" class="icon-img"></td>
+          <td class="ultimo"><img src="./assets/icons/historial.svg" alt="Historias Clínicas" class="icon-img"></td>
+          <td class="ultimo"><img src="./assets/icons/borrar.svg" alt="Eliminar" class="icon-img"></td>
+        </tr>
+       
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <div class="appointment-item2 mobile-only">
+    <div class="appointment-card2 ">
+      <div class="top-row">
+          <span class="appointment-name">Juan Fernández</span>
+      </div>
+      <div class="middle-row">
+          <span class="pacient-address">Nombre OS, Plan </span>
+          <span class="pacient-professional">Nro. de afiliado</span>
+      </div>
+      <div class="middle-row">
+        <span class="pacient-address">Juan.Fernández@mail.com.ar </span>
+        <span class="pacient-professional">+54 9 341 1823 548</span>
+    </div>
+      <div class="bottom-row">
+          <span class="pacient-status"><img src="./assets/icons/turnos.svg" alt="Turnos" class="icon-img">Próximos turnos</span>
+          <img src="./assets/icons/borrar.svg" alt="Eliminar" class="icon-img">
+      </div>
+  </div>
+  
+  </div>
+
+  <div class="appointment-item2 mobile-only">
+    <div class="appointment-card2 ">
+      <div class="top-row">
+          <span class="appointment-name">María Victoria Fernández</span>
+      </div>
+      <div class="middle-row">
+          <span class="pacient-address">Nombre OS, Plan </span>
+          <span class="pacient-professional">Nro. de afiliado</span>
+      </div>
+      <div class="middle-row">
+        <span class="pacient-address">Juan.Fernández@mail.com.ar </span>
+        <span class="pacient-professional">+54 9 341 1823 548</span>
+    </div>
+      <div class="bottom-row">
+          <span class="pacient-status"><img src="./assets/icons/turnos.svg" alt="Turnos" class="icon-img">Próximos turnos</span>
+          <img src="./assets/icons/borrar.svg" alt="Eliminar" class="icon-img">
+      </div>
+  </div>
+  
+  </div>
+
+
+  <div class="pagination">
+    <span class="page-arrow">
+        <img src="./assets/icons/arrow-left.svg" alt="Previous">
+    </span>
+    <span class="page-number active">1</span>
+    <span class="page-number">2</span>
+    <span class="page-number">3</span>
+    <span class="page-number">4</span>
+    <span class="page-number">5</span>
+    <span class="page-arrow">
+        <img src="./assets/icons/arrow-right.svg" alt="Next">
+    </span>
+</div>
+  </div>
+
+<!-- Formulario Nuevo Paciente -->
+<div id="nuevo-paciente" class="nuevo-paciente-section hidden">
+  <h3 class="section-title">Nuevo paciente</h3>
+  <p class="form-instructions"><span>Atención:</span> los campos (*) son obligatorios.</p>
+  <form class="patient-form">
+      <div class="form-row">
+          <div class="form-group">
+              <label for="nombre">Nombre*</label>
+              <input type="text" id="nombre" placeholder="Por ej.: Adriana o Juan">
+          </div>
+          <div class="form-group">
+              <label for="apellido">Apellido*</label>
+              <input type="text" id="apellido" placeholder="Por ej.: Fernández">
+          </div>
+      </div>
+      <div class="form-row">
+          <div class="form-group">
+              <label for="dni">DNI*</label>
+              <input type="text" id="dni" placeholder="Por ej.: 14555555">
+          </div>
+          <div class="form-group">
+              <label for="email">E-mail*</label>
+              <input type="email" id="email" placeholder="Por ej.: juan@doctorya.com.ar">
+          </div>
+      </div>
+      <div class="form-row">
+          <div class="form-group">
+              <label for="direccion">Dirección</label>
+              <input type="text" id="direccion" placeholder="Por ej.: San Martín 555">
+          </div>
+          <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="text" id="telefono" placeholder="Por ej.: 0341156255533">
+          </div>
+      </div>
+      <div class="form-row">
+          <div class="form-group">
+              <label for="obra-social">Obra social</label>
+              <select id="obra-social">
+                  <option>Seleccione obra social</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="plan">Plan</label>
+              <select id="plan">
+                  <option>Seleccione un plan</option>
+              </select>
+          </div>
+      </div>
+     
+      <div class="form-row-half">
+        <div class="form-group half-width">
+            <label for="nro-afiliado">Nro. afiliado</label>
+            <input type="text" id="nro-afiliado" placeholder="Por ej.: 1006D">
+        </div>
+      </div>
+      <div class="form-row"> 
+        <div class="form-group align-end">
+            <label for="observaciones">Observaciones / Comentarios</label>
+            <input type="text" id="observaciones" placeholder="Observación sobre el paciente">
+        </div>
+        <div class="form-group button-group">
+            <button type="submit" class="add-btn-2" id="addBtn">AÑADIR</button>
+        </div>
+    </div>
+    
+  </form>
+  <hr class="divider">
+
+<!-- Sección Modificar paciente -->
+<h3 class="section-title">Modificar paciente existente</h3>
+<div class="search-bar-container">
+    <input type="text" class="search-input-2" placeholder="Nombre, Apellido o DNI">
+    <button class="search-btn">BUSCAR</button>
+</div>
+</div>
+
+
+
+
+
+</section>
+
+<!-- Modal FORM -->
+<div id="myModal" class="modal hidden">
+  <div class="modal-content">
+
+    <form class="modal-form">
+      <div class="form-row-2">
+        <div class="form-group">
+          <label for="nombre">Nombre*</label>
+          <input type="text" id="nombre-modal" placeholder="Adriana">
+        </div>
+        <div class="form-group">
+          <label for="apellido">Apellido*</label>
+          <input type="text" id="apellido-modal" placeholder="Fernández">
+        </div>
+      </div>
+      <div class="form-row-2">
+        <div class="form-group">
+          <label for="dni">DNI*</label>
+          <input type="text" id="dni-modal" placeholder="14555555">
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail*</label>
+          <input type="email" id="email-modal" placeholder="juan@doctorya.com.ar">
+        </div>
+      </div>
+      <div class="form-row-2">
+        <div class="form-group">
+          <label for="direccion">Dirección</label>
+          <input type="text" id="direccion-modal" placeholder="San Martín 555">
+        </div>
+        <div class="form-group">
+          <label for="telefono">Teléfono</label>
+          <input type="text" id="telefono-modal" placeholder="0341156255533">
+        </div>
+      </div>
+      <div class="form-row-2">
+        <div class="form-group">
+          <label for="obra-social">Obra social</label>
+          <select id="obra-social-modal">
+            <option>Obra social</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="plan">Plan</label>
+          <select id="plan-modal">
+            <option>Plan</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row-half">
+        <div class="form-group half-width">
+          <label for="nro-afiliado">Nro. afiliado</label>
+          <input type="text" id="nro-afiliado-modal" placeholder="1006D">
+        </div>
+      </div>
+        <div class="form-row-2">
+        <div class="form-group">
+          <label for="observaciones">Observaciones</label>
+          <input type="text" id="observaciones-modal" placeholder="El paciente cuenta con">
+        </div>
+      </div>
+
+      <div class="form-group ">
+        <button type="submit" class="confirm-btn">CONFIRMAR</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Seccion Historial -->
+<section id="historia" class="historia-section hidden">
+  <div class="historia-container">
+    <h2 class="historia-title">Nombre y Apellido del paciente</h2>
+    <p class="historia-info">Último turno: 17/02/2024</p>
+    <p class="historia-info">Próximo turno: No registrado</p>
+
+    <div class="historia-notes">
+      <textarea placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."></textarea>
+    </div>
+
+    <p class="historia-update">Última actualización 01/03/2024</p>
+    <div class="buttons-container">
+      <button class="historia-btn edit-btn">EDITAR</button>
+      <button class="historia-btn save-btn">GUARDAR</button>
+      <button class="historia-btn delete-btn">ELIMINAR</button>
+    </div>
+
+  
+  </div>
+
+
+  <div class="datos-paciente-container">
+    <h3 class="datos-paciente-title">Datos del paciente</h3>
+    <form class="datos-paciente-form">
+      <div class="form-row-2">
+        <div class="form-group-datos">
+          <label for="dni-paciente">DNI</label>
+          <input type="text" id="dni-paciente" value="14555555" readonly>
+        </div>
+        <div class="form-group-datos">
+          <label for="email-paciente">E-mail</label>
+          <input type="email" id="email-paciente" value="juan@doctorya.com.ar" readonly>
+        </div>
+      </div>
+      <div class="form-row-3">
+        <div class="form-group-datos">
+          <label for="direccion-paciente">Dirección</label>
+          <input type="text" id="direccion-paciente" value="San Martín 555" readonly>
+        </div>
+        <div class="form-group-datos">
+          <label for="telefono-paciente">Teléfono</label>
+          <input type="text" id="telefono-paciente" value="0341156255533" readonly>
+        </div>
+      </div>
+      <div class="form-row-3">
+        <div class="form-group-datos">
+          <label for="obra-social-paciente">Obra social</label>
+          <input type="text" id="obra-social-paciente" value="Obra social" readonly>
+        </div>
+        <div class="form-group-datos">
+          <label for="plan-paciente">Plan</label>
+          <input type="text" id="plan-paciente" value="Plan" readonly>
+        </div>
+      </div>
+      <div class="form-row-4">
+        <div class="form-group-datos half-width">
+          <label for="nro-afiliado-paciente">Nro. afiliado</label>
+          <input type="text" id="nro-afiliado-paciente" value="1006D" readonly>
+        </div>
+      </div>
+      
+      <div class="form-row-3">
+        <div class="form-group-datos half-width">
+          <label for="comentarios-paciente">Comentarios</label>
+          <input type="text" id="comentarios-paciente" value="El paciente cuenta con" readonly>
+        </div>
+        <div class="form-group-datos full-width">
+          <button type="button" class="editar-btn">Editar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</section>
+
+<!-- Seccion Reportes -->
+<section id="reportes" class="reportes-section hidden">
+  <!-- Título -->
+  <h2 class="reportes-title">Nuevo reporte</h2>
+
+  <!-- Contenedor de selects -->
+  <div class="reportes-header">
+    <div class="reportes-left">
+      <div class="select-wrapper">
+        <img src="./assets/icons/agendar.svg" alt="Calendario" class="select-icon">
+        <select>
+          <option>Últimos 30 días</option>
+        </select>
+      </div>
+  
+      <div class="select-wrapper">
+        <img src="./assets/icons/filtrar.svg" alt="Filtros" class="select-icon">
+        <select>
+          <option>Filtros</option>
+        </select>
+      </div>
+    </div>
+  
+    <div class="reportes-right">
+      <button class="btn-config">
+        <img src="./assets/icons/configuracion.svg" alt="Configuración" class="icon-btn">
+        Configuración
+      </button>
+    
+      <button class="btn-descargar">
+        <img src="./assets/icons/descargar.svg" alt="Descargar" class="icon-btn">
+        Descargar
+      </button>
+    </div>
+  </div>
+  
+
+  <!-- Título de datos -->
+  <h3 class="datos-title">Datos de los turnos</h3>
+
+  <!-- Contenedor de cards -->
+  <div class="reportes-cards-container">
+    <div class="reporte-card">
+      <h4 class="reporte-card-title">
+        Turnos creados <span class="reporte-card-icon">&#9432;</span>
+      </h4>
+      <p class="reporte-card-number">125</p>
+      <p class="reporte-card-diff"><strong>+56</strong><br> frente a los 30 días de antes</p>
+    </div>
+    <div class="reporte-card">
+      <h4 class="reporte-card-title">
+        Turnos completados <span class="reporte-card-icon">&#9432;</span>
+      </h4>
+      <p class="reporte-card-number">120</p>
+      <p class="reporte-card-diff"><strong>+51</strong><br> frente a los 30 días de antes</p>
+    </div>
+    <div class="reporte-card">
+      <h4 class="reporte-card-title">
+        Turnos reprogramados <span class="reporte-card-icon">&#9432;</span>
+      </h4>
+      <p class="reporte-card-number">2</p>
+      <p class="reporte-card-diff"><strong>+0</strong><br>frente a los 30 días de antes</p>
+    </div>
+    <div class="reporte-card">
+      <h4 class="reporte-card-title">
+        Turnos cancelados <span class="reporte-card-icon">&#9432;</span>
+      </h4>
+      <p class="reporte-card-number">3</p>
+      <p class="reporte-card-diff"><strong>+3</strong><br>frente a los 30 días de antes</p>
+    </div>
+  </div>
+  
+
+  <div class="graficos-container">
+   
+  
+    <div class="graficos-grid">
+      <div class="grafico-item">
+        <img src="./assets/img/tendencia.svg" alt="Tendencia de turnos completados">
+      </div>
+      <div class="grafico-item">
+        <img src="./assets/img/distribucion.svg" alt="Distribución de turnos por duración">
+      </div>
+      <div class="grafico-item">
+        <img src="./assets/img/temas-populares.svg" alt="Turnos populares">
+      </div>
+      <div class="grafico-item">
+        <img src="./assets/img/horarios-populares.svg" alt="Horarios populares">
+      </div>
+
+     
+    <h2 class="graficos-title">Datos de los profesionales</h2>
+     
+      
+      <div class="grafico-item">
+        <img src="./assets/img/profesionales-mas.svg" alt="Profesionales con más turnos">
+      </div>
+      <div class="grafico-item">
+        <img src="./assets/img/profesionales-menos.svg" alt="Profesionales con menos turnos">
+      </div>
+    </div>
+  </div>
+  
+  
+</section>
+
+
+
+
+
+
+  </main>
+  </div>
+
+
+
+
+<!-- Footer para versión desktop -->
+<footer class="footer-container">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <img src="./assets/img/drya-blanco.svg" alt="Logo DoctorYa">
+    </div>
+    <div class="footer-info">
+      <p>Todos los derechos reservados. <a href="mailto:contacto@doctorya.com.ar">contacto@doctorya.com.ar</a> 0341 2997787</p>
+    </div>
+    <div class="footer-social">
+      <p>Seguinos en redes</p>
+      <div class="social-icons">
+        <a href="#"><img src="./assets/icons/face.svg" alt="Facebook"></a>
+        <a href="#"><img src="./assets/icons/ig.svg" alt="Instagram"></a>
+        <a href="#"><img src="./assets/icons/yt.svg" alt="YouTube"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<script>
+const sidebar = document.querySelector('.sidebar');
+const openMenu = document.querySelector('.open-menu');
+const closeMenu = document.querySelector('.close-menu');
+const menuItems = document.querySelectorAll('.menu-item a, .submenu-item a');
+const sections = {
+  inicio: document.getElementById('inicio'),
+  agenda: document.getElementById('agenda'),
+  turnos: document.getElementById('turnos'),
+  profesionales: document.getElementById('prof'),
+  pacientes: document.getElementById('paci'),
+  historia: document.getElementById('historia'),
+  reportes: document.getElementById('reportes'),
+};
+
+// Función para verificar si es móvil
+function isMobile() {
+  return window.innerWidth <= 768; // Cambia este valor según el tamaño móvil que uses
+}
+
+// Función para alternar el menú (abre o cierra)
+const toggleMenu = () => {
+  sidebar.classList.toggle('open');
+  sidebar.classList.toggle('closed');
+  openMenu.style.display = sidebar.classList.contains('open') ? 'none' : 'flex';
+  closeMenu.style.display = sidebar.classList.contains('open') ? 'flex' : 'none';
+  adjustSectionWidth(); // Ajustar el ancho de las secciones
+};
+
+// Asignar eventos solo una vez y según el tipo de dispositivo
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+if (isTouchDevice) {
+  // Usar touchstart en móviles
+  openMenu.addEventListener('touchstart', (e) => {
+    e.preventDefault(); // Prevenir disparos dobles
+    toggleMenu();
+  });
+
+  closeMenu.addEventListener('touchstart', (e) => {
+    e.preventDefault(); // Prevenir disparos dobles
+    toggleMenu();
+  });
+} else {
+  // Usar click en desktop
+  openMenu.addEventListener('click', toggleMenu);
+  closeMenu.addEventListener('click', toggleMenu);
+}
+
+// Función para ocultar todas las secciones
+function hideAllSections() {
+  Object.values(sections).forEach(section => {
+    if (section) {  // Verifica si la sección existe
+      section.classList.add('hidden');
+      section.classList.remove('visible');
+    }
+  });
+}
+
+// Función para mostrar una sección específica
+function showSection(sectionId, clickedMenuItem) {
+  hideAllSections(); // Oculta todas las secciones
+  sections[sectionId].classList.remove('hidden'); // Muestra la sección seleccionada
+  sections[sectionId].classList.add('visible');
+
+  // Quitar la clase 'active' de todos los ítems del menú
+  menuItems.forEach(item => item.classList.remove('active'));
+
+  // Añadir la clase 'active' al ítem clicado
+  if (clickedMenuItem) {
+    clickedMenuItem.classList.add('active');
+  }
+}
+
+
+// Asignar eventos a los elementos del menú
+menuItems.forEach(item => {
+  item.addEventListener('click', (e) => {
+    e.preventDefault();  // Prevenir el comportamiento predeterminado del enlace
+    const sectionId = item.id.split('-')[0]; 
+
+    
+    showSection(sectionId, item);  
+  });
+});
+
+// Mostrar la sección de "Inicio" inicialmente cuando la página se carga
+window.addEventListener('DOMContentLoaded', () => {
+  showSection('inicio');  // Mostrar la sección 'inicio' al cargar la página
+  // Asegurar que el menú 'Inicio' esté activo al cargar
+});
+
+// Función para ajustar el ancho de las secciones según el estado del menú lateral
+function adjustSectionWidth() {
+  const sectionsToAdjust = document.querySelectorAll('.main-content section:not(#inicio)'); // Excluir la sección "inicio"
+
+  if (!isMobile()) {
+    if (sidebar.classList.contains('open')) {
+      sectionsToAdjust.forEach(section => {
+        section.style.width = 'calc(100% - 290px)'; // Ajustar el ancho de las secciones
+        section.style.marginLeft = '290px'; // Mover contenido a la derecha
+      });
+    } else {
+      sectionsToAdjust.forEach(section => {
+        section.style.width = 'calc(100% - 90px)'; // Volver al ancho original de las secciones
+        section.style.marginLeft = '90px'; // Restaurar el margen original
+      });
+    }
+  } else {
+
+    sectionsToAdjust.forEach(section => {
+      section.style.width = '100%';
+      section.style.marginLeft = '0';
+    });
+  }
+}
+
+
+window.addEventListener('resize', adjustSectionWidth);
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  adjustSectionWidth();
+});
+
+
+// Botones Inicio
+
+// Seleccionamos los botones y las secciones de la sidebar
+const optionButtons = document.querySelectorAll('.option-btn');
+const sidebarSections = {
+  inicio: document.getElementById('inicio'),
+  turnos: document.getElementById('turnos'),
+  profesionales: document.getElementById('prof'),
+  pacientes: document.getElementById('paci'),
+  reportes: document.getElementById('reportes')
+};
+
+// Función para mostrar la sección seleccionada y ocultar las demás
+function showSidebarSection(sectionId) {
+  // Oculta todas las secciones de la sidebar, incluida la sección "Inicio"
+  Object.values(sidebarSections).forEach(section => {
+    section.classList.add('hidden');
+    section.classList.remove('visible');
+  });
+
+  // Muestra la sección correspondiente y oculta el menú de inicio
+  if (sidebarSections[sectionId]) {
+    sidebarSections[sectionId].classList.remove('hidden');
+    sidebarSections[sectionId].classList.add('visible');
+  }
+}
+
+// Asignamos el evento de clic a cada botón
+optionButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Determinamos a qué sección ir dependiendo del botón que se haga clic
+    switch (button.textContent.trim()) {
+      case 'Añadir turno':
+        showSidebarSection('turnos');
+        break;
+      case 'Consultar disponibilidad de profesional':
+        showSidebarSection('profesionales');
+        break;
+      case 'Información de un paciente':
+        showSidebarSection('pacientes');
+        break;
+      case 'Total de turnos completados':
+        showSidebarSection('reportes');
+        break;
+      default:
+        console.log('Sección no encontrada');
+    }
+  });
+});
+
+
+// MENU MI CUENTA 
+// Obtenemos los elementos necesarios
+const profileSection = document.getElementById('profileSection'); // Sección "Mi perfil"
+const configSection = document.getElementById('configSection'); // "Configuracion"
+const availabilitySection = document.getElementById('availabilitySection'); // "Disponibilidad"
+
+const menuLinks = document.querySelectorAll('.menu-list .menu-item a, .menu-list .submenu-item a'); // Enlaces de la sidebar
+
+function ocultarTodasLasSecciones() {
+  const secciones = document.querySelectorAll('section');
+  secciones.forEach((section) => {
+    section.classList.add('hidden');
+    section.classList.remove('visible');
+  });
+}
+
+// Función para mostrar la sección de perfil
+function mostrarPerfil() {
+  ocultarTodasLasSecciones(); // Ocultar todas las secciones
+  profileSection.classList.remove('hidden');
+  profileSection.classList.add('visible');
+}
+
+// Función para ocultar la sección de perfil cuando se selecciona un enlace de la sidebar
+function ocultarPerfil() {
+  if (profileSection && profileSection.classList.contains('visible')) {
+    profileSection.classList.add('hidden');
+    profileSection.classList.remove('visible');
+  }
+}
+
+function mostrarConfiguracion() {
+  ocultarTodasLasSecciones();
+  ocultarPerfil() ;// Ocultar todas las secciones
+  configSection.classList.remove('hidden');
+  configSection.classList.add('visible');
+}
+
+function ocultarConfiguracion() {
+  if (configSection && configSection.classList.contains('visible')) {
+    configSection.classList.add('hidden');
+    configSection.classList.remove('visible');
+  }
+}
+
+function mostrarDisponibilidad() {
+  ocultarTodasLasSecciones();
+  ocultarPerfil();
+  ocultarConfiguracion();
+  availabilitySection.classList.remove('hidden');
+  availabilitySection.classList.add('visible');
+}
+
+function ocultarDisponibilidad() {
+  if (availabilitySection && availabilitySection.classList.contains('visible')) {
+    availabilitySection.classList.add('hidden');
+    availabilitySection.classList.remove('visible');
+  }
+}
+
+// Asignar eventos a los enlaces del menú de la sidebar para ocultar "Mi perfil"
+menuLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+
+    ocultarPerfil(); 
+    ocultarConfiguracion();
+
+    // Muestra la sección seleccionada
+    const sectionId = link.id.split('-')[0]; // Obtener ID de sección basado en el ID del enlace
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+      targetSection.classList.remove('hidden');
+      targetSection.classList.add('visible');
+    }
+  });
+});
+
+// Tags Configuracion
+function addTag(containerId, tagName) {
+  const container = document.getElementById(containerId);
+  const newTag = document.createElement('div');
+  newTag.className = 'tag';
+
+  // Crear el texto del tag
+  const tagText = document.createElement('span');
+  tagText.textContent = tagName;
+
+  // Crear el botón de eliminar
+  const removeButton = document.createElement('button');
+  removeButton.className = 'remove-tag';
+  removeButton.setAttribute('onclick', 'removeTag(this)');
+
+  // Crear la imagen para el botón de eliminar
+  const removeIcon = document.createElement('img');
+  removeIcon.src = './assets/icons/quitar.svg'; // Ruta de tu imagen de eliminación
+  removeIcon.alt = 'Eliminar';
+
+  // Añadir la imagen al botón de eliminar
+  removeButton.appendChild(removeIcon);
+
+  // Añadir el texto y el botón de eliminar al nuevo tag
+  newTag.appendChild(tagText);
+  newTag.appendChild(removeButton);
+
+  // Insertar el nuevo tag antes del último elemento hijo del contenedor
+  container.insertBefore(newTag, container.lastElementChild);
+}
+
+function removeTag(button) {
+  button.parentElement.remove();
+}
+
+
+
+
+
+function changeView(view) {
+  const listViewBtn = document.getElementById('listViewBtn');
+  const calendarViewBtn = document.getElementById('calendarViewBtn');
+
+  // Obtener los contenedores de vista
+  const listViewContent = document.getElementById('listViewContent');
+  const calendarViewContent = document.getElementById('calendarViewContent');
+
+  // Cambiar clases para reflejar la selección
+  if (view === 'list') {
+    listViewBtn.classList.add('selected-tab');
+    calendarViewBtn.classList.remove('selected-tab');
+    listViewContent.classList.remove('hidden');
+    calendarViewContent.classList.add('hidden');
+
+    // Asegurarse de que 'listViewContent' mantenga la clase correcta
+    listViewContent.classList.add('calendar-list-section');
+  } else if (view === 'calendar') {
+    calendarViewBtn.classList.add('selected-tab');
+    listViewBtn.classList.remove('selected-tab');
+    calendarViewContent.classList.remove('hidden');
+    listViewContent.classList.add('hidden');
+
+    // Asegurarse de que 'listViewContent' mantenga la clase correcta
+    listViewContent.classList.remove('calendar-list-section');
+  }
+}
+// Selección de la celda
+const calendarCells = document.querySelectorAll('.calendar-cell');
+
+calendarCells.forEach(cell => {
+  cell.addEventListener('click', (event) => {
+    // Evitar que el clic en un icono dentro de la celda desencadene la selección
+    if (event.target.classList.contains('cell-icon')) return;
+
+    // Remover la clase 'selected' de todas las celdas
+    calendarCells.forEach(c => c.classList.remove('selected'));
+
+    // Agregar la clase 'selected' a la celda actual
+    cell.classList.add('selected');
+  });
+});
+
+// MODAL CALENDARIO CAMBIO IMAGEN 
+const cellIcons = document.querySelectorAll('.cell-icon'); // Asumiendo que cada celda tiene un ícono con esta clase
+const modal = document.getElementById('editModal');
+
+cellIcons.forEach(icon => {
+  icon.addEventListener('click', (event) => {
+    // Evitar que el clic se propague y deseleccione la celda
+    event.stopPropagation();
+
+    // Obtener la celda donde se hizo clic
+    const cell = event.target.closest('.calendar-cell');
+    const cellRect = cell.getBoundingClientRect();
+    const modalHeight = modal.offsetHeight || 100; // Ajustar según la altura del modal
+
+    // Calcular la posición correcta del modal para que siempre esté sobre la celda
+
+    const modalTopPosition = cellRect.top + window.scrollY; 
+    const modalLeftPosition = Math.min(
+      cellRect.left + window.scrollX,
+      window.innerWidth - modal.offsetWidth - 10
+    );
+
+    // Establecer la posición del modal
+    modal.style.top = `${modalTopPosition}px`;
+    modal.style.left = `${modalLeftPosition}px`;
+
+    // Mostrar el modal
+    modal.classList.remove('hidden');
+  });
+});
+
+// Cerrar el modal al hacer clic fuera
+document.addEventListener('click', (event) => {
+  if (!modal.contains(event.target) && !event.target.classList.contains('cell-icon')) {
+    modal.classList.add('hidden');
+  }
+});
+
+
+//MODAL CALENDARIO
+
+
+
+const openModalBtn = document.getElementById('openModalBtn');
+
+// Obtener el botón "Editar fecha/s" dentro del modal de edición
+const editDateBtn = document.getElementById('editDateBtn');
+
+// Obtener el modal de añadir horas
+const addHoursModal = document.getElementById('addHoursModal');
+
+// Función para abrir el modal desde cualquier botón
+function openModal() {
+  addHoursModal.classList.add('visible');
+}
+
+// Añadir evento de clic para el botón que abre el modal principal
+openModalBtn.addEventListener('click', openModal);
+
+// Añadir evento de clic para el botón "Editar fecha/s" dentro del modal de edición
+editDateBtn.addEventListener('click', () => {
+  // Cerrar el modal de edición (opcional si se necesita)
+  const editModal = document.getElementById('editModal');
+  editModal.classList.add('hidden');
+
+  openModal();
+});
+
+
+document.addEventListener('click', (event) => {
+  const isClickInsideModal = addHoursModal.contains(event.target);
+  const isClickOnButton = openModalBtn.contains(event.target) || editDateBtn.contains(event.target);
+  
+  if (!isClickInsideModal && !isClickOnButton) {
+    addHoursModal.classList.remove('visible');
+  }
+});
+
+// EVENTO MODAL JUEVES
+
+const editAllThursdaysBtn = document.getElementById('editAllThursdaysBtn');
+
+// Obtener el modal de editar los jueves
+const editThursdaysModal = document.getElementById('editThursdaysModal');
+
+// Función para abrir el modal de los jueves al hacer clic en el botón
+editAllThursdaysBtn.addEventListener('click', (event) => {
+  event.stopPropagation(); // Para evitar cerrar el modal al hacer clic en el mismo botón
+  editThursdaysModal.classList.remove('hidden');
+  editThursdaysModal.classList.add('visible');
+});
+
+// Función para cerrar el modal al hacer clic fuera de él (opcional)
+document.addEventListener('click', (event) => {
+  if (!editThursdaysModal.contains(event.target) && !event.target.closest('#editAllThursdaysBtn')) {
+    editThursdaysModal.classList.add('hidden');
+    editThursdaysModal.classList.remove('visible');
+  }
+});
+
+// Evitar cerrar el modal si se hace clic dentro del mismo
+editThursdaysModal.addEventListener('click', (event) => {
+  event.stopPropagation();
+});
+
+
+
+</script>
+<script>
+document.getElementById('filterToggle').addEventListener('click', function() {
+  const filterContainer = document.getElementById('filters-container');
+  filterContainer.classList.toggle('hidden'); // Activa o desactiva la clase "hidden"
+});
+
+
+// Ocultar sección Pacientes y mostrar formulario Nuevo Paciente
+document.getElementById('addNewPatient').addEventListener('click', function() {
+    document.getElementById('pacientes-interna').classList.add('hidden');
+    document.getElementById('nuevo-paciente').classList.remove('hidden');
+});
+// Muestra el formulario de Nuevo Paciente dentro de la sección de Pacientes
+document.getElementById('addNewPatient').addEventListener('click', function() {
+    document.querySelector('.search-bar-container').classList.add('hidden'); // Oculta los filtros y botones de búsqueda
+    document.getElementById('nuevo-paciente').classList.remove('hidden'); // Muestra el formulario
+});
+
+// Función para ocultar el formulario de nuevo paciente cuando se navegue a otra sección
+function hideNewPatientForm() {
+    document.getElementById('nuevo-paciente').classList.add('hidden');
+    document.querySelector('.search-bar-container').classList.remove('hidden'); // Vuelve a mostrar la barra de búsqueda
+}
+
+
+
+// Función para mostrar la agenda de Kinesiología
+function mostrarAgendaKinesiologia() {
+  // Ocultar contenido de agenda principal
+  const agendaSection = document.getElementById('agenda');
+  agendaSection.classList.add('hidden');
+
+  // Mostrar agenda de Kinesiología
+  const agendaKinesiologia = document.getElementById('kinesiologia-agenda');
+  agendaKinesiologia.classList.remove('hidden');
+  agendaKinesiologia.style.display = 'block'; // Asegúrate de que se muestre
+}
+
+// Función para volver a la agenda principal
+function volverAAgenda() {
+  // Mostrar contenido de agenda principal
+  const agendaSection = document.getElementById('agenda');
+  agendaSection.classList.remove('hidden');
+
+  // Ocultar agenda de Kinesiología
+  const agendaKinesiologia = document.getElementById('kinesiologia-agenda');
+  agendaKinesiologia.classList.add('hidden');
+  agendaKinesiologia.style.display = 'none';
+}
+
+// Función para ocultar todas las secciones al cambiar de sección desde la barra lateral
+function ocultarSecciones() {
+  const secciones = document.querySelectorAll('.section');
+  secciones.forEach((section) => {
+    section.classList.add('hidden');
+    section.style.display = 'none';
+  });
+
+  // Asegurarse de que la sección de Kinesiología también se oculte
+  const agendaKinesiologia = document.getElementById('kinesiologia-agenda');
+  agendaKinesiologia.classList.add('hidden');
+  agendaKinesiologia.style.display = 'none';
+}
+
+// Evento para volver a la sección principal de Agenda cuando se navega desde la barra lateral
+document.querySelectorAll('.menu-item-agenda').forEach(link => {
+  link.addEventListener('click', () => {
+    ocultarSecciones(); // Ocultar todas las secciones
+    volverAAgenda(); // Mostrar solo la sección principal de la agenda
+  });
+});
+
+// Agregar eventos para navegar desde la barra lateral
+document.querySelectorAll('.menu-item').forEach(link => {
+  link.addEventListener('click', (e) => {
+    ocultarSecciones(); // Ocultar todas las secciones
+    const targetId = e.target.dataset.target; // Usar un atributo data para identificar la sección destino
+    const targetSection = document.getElementById(targetId);
+
+    // Mostrar la sección destino si existe
+    if (targetSection) {
+      targetSection.classList.remove('hidden');
+      targetSection.style.display = 'block';
+    }
+  });
+});
+
+
+// Función para mostrar el modal formulario
+function abrirModal() {
+  const modal = document.getElementById('modal-formulario');
+  if (modal) {
+    modal.classList.remove('hidden');
+  }
+}
+
+// Función para cerrar el modal
+function cerrarModal() {
+  const modal = document.getElementById('modal-formulario');
+  if (modal) {
+    modal.classList.add('hidden');
+  }
+}
+
+// Cerrar el modal al hacer clic fuera de la ventana de contenido
+window.onclick = function(event) {
+  const modal = document.getElementById('modal-formulario');
+  if (event.target === modal) {
+    cerrarModal();
+  }
+}
+
+// Función para alternar entre los formularios recurrente y único dentro del modal
+function mostrarFormulario(tipo) {
+  const botonRecurrente = document.getElementById('boton-recurrente');
+  const botonUnico = document.getElementById('boton-unico');
+  const formularioRecurrente = document.getElementById('formulario-recurrente');
+  const formularioUnico = document.getElementById('formulario-unico');
+
+  if (tipo === 'recurrente') {
+    formularioRecurrente.classList.remove('hidden');
+    formularioUnico.classList.add('hidden');
+    botonRecurrente.classList.add('activo');
+    botonUnico.classList.remove('activo');
+  } else {
+    formularioRecurrente.classList.add('hidden');
+    formularioUnico.classList.remove('hidden');
+    botonRecurrente.classList.remove('activo');
+    botonUnico.classList.add('activo');
+  }
+}
+
+
+
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Mostrar el modal al hacer clic en el botón "Añadir"
+  const addButton = document.getElementById('addBtn');
+  const modal = document.getElementById('myModal');
+
+  addButton.addEventListener('click', function(event) {
+    event.preventDefault(); // Evitar el envío del formulario
+    console.log('Botón "Añadir" presionado'); // Verificar en la consola
+    modal.classList.remove('hidden'); // Eliminar la clase que lo oculta
+    modal.style.display = 'flex'; // Mostrar el modal como flex
+  });
+
+  // Cerrar el modal si se hace clic fuera del contenido
+  window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      modal.classList.add('hidden'); // Ocultar el modal
+      modal.style.display = 'none'; // Asegurarse de que el display vuelva a none
+    }
+  });
+
+});
+
+
+
+// Lógica para abrir y cerrar el menú desplegable "Cuenta"
+const accountBtn = document.getElementById('accountBtn');
+const accountDropdown = document.getElementById('accountDropdown');
+
+accountBtn.addEventListener('click', function() {
+  accountDropdown.classList.toggle('hidden');
+});
+
+// Cerrar el menú si se hace clic fuera de él
+window.addEventListener('click', function(e) {
+  if (!accountBtn.contains(e.target) && !accountDropdown.contains(e.target)) {
+    accountDropdown.classList.add('hidden');
+  }
+});
+
+
+</script>
+  </body>
+</html>

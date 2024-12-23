@@ -6,8 +6,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<meta property="og:title" content="Registro - Dr.Ya" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="Inicio Sesión - Dr.Ya" />
+<meta property="og:description" content="Iniciar Sesión" />
 <meta property="og:url" content="" />
 <meta property="og:image" content="" />
 
@@ -24,11 +24,11 @@
 <link rel="icon" href="./assets/icons/dr-ya-icon.svg">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<link href="./assets/home.css" rel="stylesheet">
+<link href="./assets/login.css" rel="stylesheet">
 
 
 
-<title>Registro - Dr.Ya</title>
+<title>Inicio Sesión - Registro Profesionales</title>
 </head>
 <body>
 
@@ -57,78 +57,41 @@
 </nav> 
 
 <div class="dashboard-container">
-  <!-- Cuadrado gris para el video -->
-  <div class="video-section"></div>
+
   <img class="logo-mobile" src="./assets/icons/logo-nav.svg" alt="Logo DoctorYa">
   
-  <!-- Botones de ingreso a la derecha del video -->
-  <div class="ingreso-section">
-    <button class="ingreso-btn" id="btn-clinica">Registrarme como <strong>clínica</strong></button>
-    <button class="ingreso-btn" id="btn-profesional">Registrarme como <strong>profesional</strong></button>
-
-    <!-- Formulario de registro de clínica, oculto por defecto -->
-    <form id="form-clinica" class="registro-form">
-      <h2>Registro <strong>clínica</strong></h2>
-      <input type="text" placeholder="Nombre clínica">
-      <input type="email" placeholder="Email">
-      <div class="input-group">
-          <input type="text" placeholder="Nombre responsable">
-          <input type="text" placeholder="Apellido responsable">
-      </div>
-      <div class="input-group">
-          <input type="text" placeholder="Código de área">
-          <input type="text" placeholder="Número">
-      </div>
-      <input type="password" placeholder="Contraseña">
-      <p>La contraseña debe tener: 1 letra mayúscula, 1 letra minúscula, 1 carácter numérico, 8 caracteres como mínimo</p>
-      <button type="submit" class="guardar-btn">Guardar</button>
+<div class="login-container">
+  <h2>Iniciar Sesión</h2>
+  <form class="login-form">
+    <div class="input-group">
+      <label for="email">Ingresá tu dirección de email</label>
+      <input type="email" id="email" placeholder="Por ej: juan@doctorya.com.ar" required>
+    </div>
+    <div class="input-group">
+      <label for="password">Ingresá tu clave</label>
+      <input type="password" id="password" placeholder="********" required>
+    </div>
+    <div class="checkbox-group">
+      <input type="checkbox" id="remember-me">
+      <label for="remember-me">Mantener la sesión iniciada en este navegador</label>
+    </div>
+    <button type="submit" class="login-btn">Iniciar Sesión</button>
+    <div class="google-login">
+      <button type="button" class="google-btn">
+        <span class="google-icon">
+        
+          <img src="./assets/icons/google-simbol.svg" alt="Google Icon" />
+        </span> 
+        Iniciar sesión con <strong>Google</strong>
+      </button>
+    </div>
+    <div class="signup-link">
+      <p>¿Todavía no tenés tu cuenta? <a href="#">Registrate gratis</a></p>
+    </div>
   </form>
-
-    <!-- Formulario de registro de profesional, oculto por defecto -->
-    <form id="form-profesional" class="registro-form">
-      <h2>Registro <strong>profesional</strong></h2>
-      <input type="email" placeholder="Email">
-      <div class="input-group">
-          <input type="text" placeholder="Nombre">
-          <input type="text" placeholder="Apellido">
-      </div>
-      <div class="input-group">
-          <input type="text" placeholder="Código de área">
-          <input type="text" placeholder="Número">
-      </div>
-      <div class="radio-group">
-        <div class="radio-buttons">
-          <label>¿Pertenece a una clínica?</label>
-          <label for="si">Sí</label>
-          <input type="radio" name="clinica" id="si" value="si">
-          <label for="no">No</label> 
-          <input type="radio" name="clinica" id="no" value="no">
-     
-        </div>
-        <input type="text" placeholder="Nombre clínica" id="nombre-clinica" disabled>
-      </div>
-      <div class="input-group">
-          <select>
-              <option value="">Seleccione género</option>
-              <option value="masculino">Masculino</option>
-              <option value="femenino">Femenino</option>
-          </select>
-          <select>
-              <option value="">Seleccione especialidad</option>
-              <option value="dermatología">Dermatología</option>
-              <option value="cirugía">Cirugía</option>
-          </select>
-      </div>
-      <input type="password" placeholder="Contraseña">
-      <p>La contraseña debe tener: 1 letra mayúscula, 1 letra minúscula, 1 carácter numérico, 8 caracteres como mínimo</p>
-      <button type="submit" class="guardar-btn">Guardar</button>
-  </form>
-  
-
-  </div>
 </div>
 
-
+</div>
 
 
 

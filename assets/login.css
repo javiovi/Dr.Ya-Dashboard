@@ -1,0 +1,543 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background-color: #F4F4F4;
+    overflow-x: hidden;
+}
+
+/* Navbar Styles */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    background-color: #F4F4F4;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo img {
+    width: 190px; 
+    margin-left: 120px;
+}
+
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    margin-right: 60px;
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin-right:30px; 
+}
+
+.nav-links li {
+    margin: 0 15px;
+    margin-right: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #043381;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    color: #7CF1DD;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 5px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline {
+    border: 1px solid #7CF1DD;
+    color: #043381;
+    background-color: transparent;
+}
+
+.btn-outline:hover {
+    background-color: #7CF1DD;
+    color: #ffffff;
+}
+
+.btn-primary {
+    background-color: #7CF1DD;
+    color: #043381;
+    border: 1px solid transparent;
+}
+
+.btn-primary:hover {
+    background-color: #043381;
+    color: #ffffff;
+}
+
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #043381;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+
+@media (max-width: 768px) {
+    .nav-right {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #F4F4F4;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin: 0;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        margin-right: 0;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        width: calc(100% - 40px); 
+        padding: 10px 0;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar.active .nav-right {
+        display: flex;
+    }
+
+    .navbar.active .hamburger div:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .navbar.active .hamburger div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar.active .hamburger div:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    .logo img {
+        margin-left: 10px;
+    }
+}
+
+
+
+.dashboard-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    max-width: 1300px;
+    margin: 0 auto;
+    height: 75vh;
+    
+    background-image: url('img/fondo-dash.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+  }
+
+/* FOOTER */
+
+.footer-container {
+    background-color: #043381;
+    padding: 30px ;
+    
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #fff;
+  }
+  
+  .footer-logo img {
+    width: 180px;
+  }
+  
+  .footer-info {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 10px;
+  }
+  
+  .footer-info a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 10px;
+  }
+  
+  
+  .footer-social {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    margin-bottom: 10px;
+  }
+  
+  .social-icons a {
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: 300;
+  }
+  
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .footer-social p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .logo-mobile {
+    display: none;
+    width: 150px;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard-container {
+      flex-direction: column;
+      justify-content: center;
+      background-color: #ffffff;
+      min-height: 100vh;
+    }
+  
+    .video-section {
+      display: none; 
+    }
+  
+    .logo-mobile {
+      display: block !important; 
+      margin-bottom: 10px;
+      width: 190px;
+      margin-top: 20px;
+    
+    }
+  
+    .navbar {
+      display: none; 
+    }
+  
+    .footer-container{
+      display: none;
+    }
+  }  
+
+
+  /* LOGIN FORM */
+
+  /* Estilos generales para el contenedor de login */
+.login-container {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 40px 90px;
+  border-radius: 20px;
+ 
+  text-align: center;
+}
+
+.login-container h2 {
+  font-size: 24px;
+  color: #043381;
+  font-weight: 700;
+  font-family: 'Be Vietnam Pro';
+  margin-bottom: 20px;
+}
+
+/* Estilos para el formulario */
+.login-form {
+  width: 100%;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  color: #414141;
+  font-family: 'Be Vietnam Pro';
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid #414141;
+  box-sizing: border-box;
+}
+
+.input-group input:first-child {
+  border-top-right-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+}
+
+.input-group input:last-child {
+  border-top-left-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+}
+
+/* Estilo para el checkbox */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: -10px;
+}
+
+input[type="checkbox"] {
+  width: 19px;
+  height: 19px;
+  appearance: none; 
+  -webkit-appearance: none; 
+  border: 1px solid #000; 
+  background-color: transparent; 
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+
+input[type="checkbox"]:checked {
+  background-color: #000; /
+}
+
+
+input[type="checkbox"] {
+  border-radius: 0; 
+}
+.checkbox-group label {
+  font-size: 14px;
+  color: #8B8B8B;
+}
+
+/* Botón de iniciar sesión */
+.login-btn {
+  width: 190px; 
+  background-color: #16e0bd;
+  color: #fff;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 0 auto 20px; 
+  display: block; 
+  margin-bottom: 60px;
+}
+
+.login-btn:hover {
+  background-color: #14c5a7;
+}
+
+/* Botón de iniciar sesión con Google */
+.google-login {
+  margin-bottom: 20px;
+}
+
+.google-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #414141;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #8B8B8B;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Be Vietnam Pro';
+  margin-bottom: 40px;
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px; 
+}
+
+.google-btn strong {
+  font-weight: 600;
+  margin-left: 5px; 
+}
+
+.google-btn:hover {
+  background-color: #f0f0f0;
+  color: #414141;
+}
+
+/* Link de registrarse */
+.signup-link {
+  border: 1px solid #16e0bd;
+  border-radius:10px;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+.signup-link p {
+  font-size: 14px;
+  color: #8B8B8B;
+  margin: 0;
+}
+
+.signup-link a {
+  color: #8B8B8B;
+  text-decoration: none;
+  font-weight: 600; 
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+  color: #000; 
+}
+
+
+@media (max-width: 768px) {
+  
+  .login-container {
+    padding: 20px 30px; 
+    width: 100%;
+    max-width: 100%; }
+
+
+ 
+  .login-container h2 {
+    font-size: 20px; 
+    margin-bottom: 15px;
+  }
+
+ 
+  .login-form {
+    width: 100%;
+  }
+
+  .input-group {
+    margin-bottom: 15px; 
+  }
+
+  .input-group input {
+    font-size: 12px; 
+    padding: 8px;
+  }
+
+  /* Checkbox */
+  .checkbox-group label {
+    font-size: 12px; 
+  }
+
+  input[type="checkbox"] {
+    width: 15px; 
+    height: 15px;
+  }
+
+  /* Botón de iniciar sesión */
+  .login-btn {
+    width: 160px;
+    padding: 8px;
+    font-size: 12px; 
+    margin-bottom: 30px;
+  }
+
+ 
+  .google-btn {
+    padding: 8px;
+    font-size: 12px; 
+    margin-bottom: 20px; 
+  }
+
+  .google-icon {
+    width: 18px; 
+    height: 18px;
+  }
+
+  .google-btn strong {
+    font-size: 12px; 
+  }
+
+  /* Link de registrarse */
+  .signup-link {
+    padding: 8px; /* Menos padding */
+    font-size: 12px; /* Reducimos el tamaño de la fuente */
+  }
+
+  .signup-link p {
+    font-size: 12px; /* Ajustamos el tamaño del texto */
+  }
+
+  .signup-link a {
+    font-size: 12px;
+    font-weight: 600; /* Mantenemos el peso */
+  }
+}
